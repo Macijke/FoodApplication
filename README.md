@@ -7,3 +7,22 @@ Wykorzystywane technologie:
    - Bootstrap
    - Mongoose
    - Pug
+
+
+# Wszystkie komendy:
+
+``
+npm install pug-cli -g
+``
+
+``
+pug -w .\public\ -o ./html
+``
+
+``
+npm install nodemon -g
+``
+
+``
+nodemon server.js
+``
