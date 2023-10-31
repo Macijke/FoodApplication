@@ -1,0 +1,19 @@
+nav {
+    display: flex;
+    justify-content:space-between;
+    font-size: 1.5rem;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+nav a {
+    text-decoration: none;
+    
+}
+a:link{
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
