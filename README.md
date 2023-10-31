@@ -16,7 +16,7 @@ npm install pug-cli -g
 ``
 
 ``
-pug -w .\public\ -o ./html
+pug -w .\public\ -o ./public/html
 ``
 
 ``
@@ -32,5 +32,5 @@ npm install -g sass
 ``
 
 ``
-sass --watch .\public\style.scss .\css\style.css
+sass --watch .\public\style.scss .\public\css\style.css
 ``
