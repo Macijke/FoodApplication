@@ -26,3 +26,11 @@ npm install nodemon -g
 ``
 nodemon server.js
 ``
+
+``
+npm install -g sass
+``
+
+``
+sass --watch .\public\style.scss .\css\style.css
+``
