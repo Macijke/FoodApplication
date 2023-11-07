@@ -2,6 +2,9 @@ doctype HTML
 html(lang='pl')
     head
         meta(charset='UTF-8')
-        title Zamów jedzenie prosto do domu!
+        title Obsługiwane restauracje przez nas!
         link(rel="stylesheet",href="./css/style.css")
     body
+        each val in bookStore
+            ul
+                li= book.title

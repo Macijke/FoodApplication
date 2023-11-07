@@ -1,4 +1,8 @@
 const mongoose = require('mongoose');
 var Schema = mongoose.Schema; 
-var Restauration = mongoose.model("Restauration", new Schema({}), "restaurations"); 
-module.exports = mongoose.model('restaurations', Restauration);
+var restaurationSchema = new Schema({
+    _id:Object,
+    name:String,
+    type:Array
+});
+module.exports = mongoose.model('restaurations', restaurationSchema);
