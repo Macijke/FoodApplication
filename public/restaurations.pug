@@ -4,7 +4,23 @@ html(lang='pl')
         meta(charset='UTF-8')
         title Obsługiwane restauracje przez nas!
         link(rel="stylesheet",href="./css/style.css")
+        link(href="https://fonts.googleapis.com/css2?family=Marhey&display=swap",rel="stylesheet")
     body
-        each val in bookStore
-            ul
-                li= book.title
+        form(action="/filter", method="get")
+            label(for="foodType") Food Type:
+            select(name="foodType" id="foodType")
+                option(value="pizza") Pizza
+                option(value="kebab") Kebab
+                option(value="sushi") Sushi
+            button(type="submit") Filter
+        div.foodGrid
+            each val in restaurations
+                a(href="/zamow")
+                    div.foodContainer
+                        img(src="./images/" + val.image, class='imgFormat')
+                        div.overlay
+                            div.centeredText
+                                =val.name
+                            div.adressText
+                                = val.adress.city + ", ul. " + val.adress.street
+            

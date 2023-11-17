@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
-var Schema = mongoose.Schema; 
-var restaurationSchema = new Schema({
+let Schema = mongoose.Schema; 
+let restaurationSchema = new Schema({
     _id:Object,
     name:String,
-    type:Array
+    type:Array,
+    adress:Object,
+    image:String
 });
 module.exports = mongoose.model('restaurations', restaurationSchema);

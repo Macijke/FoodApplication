@@ -11,9 +11,70 @@ nav a {
     
 }
 a:link{
-    color: black;
+    color: white;
+    text-decoration: none;
 }
 
 a:visited {
     color: black;
+}
+
+.foodGrid {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.foodContainer {
+    border-radius: 3%;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    flex: 1;
+    margin: 10px;
+    font-family: 'Marhey', 'sans-serif';
+    
+}
+
+.foodContainer img {
+    transition: transform .5s ease;
+}
+
+.foodContainer:hover img {
+    transform: scale(1.1);
+}
+
+
+img {
+    max-width: 200%;
+    height: auto;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+.adressText {
+    color: #fff;
+    text-align: center;
+    font-size: 1em;
+}
+
+.centeredText {
+    color: #fff;
+    text-align: center;
+    font-size: 2.5em;
+    padding: 22px;
 }
