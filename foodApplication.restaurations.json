@@ -1,0 +1,59 @@
+[{
+  "_id": {
+    "$oid": "65526b32f51b32fd5601dff7"
+  },
+  "name": "Hossen Kebab",
+  "description": "Najlepszy kebab w okolicy!",
+  "type": [
+    "fastfood",
+    "kebab"
+  ],
+  "adress": {
+    "city": "Nowy Targ",
+    "street": "Krzywa 17"
+  },
+  "image": "hossen.png"
+},
+{
+  "_id": {
+    "$oid": "65572d938969759f7a10b884"
+  },
+  "name": "Sonovi Kebab",
+  "type": [
+    "kebab",
+    "fastfood"
+  ],
+  "adress": {
+    "city": "Nowy Targ",
+    "street": "Krzywa 77"
+  },
+  "image": "sonovi.png"
+},
+{
+  "_id": {
+    "$oid": "655735cd8969759f7a10b885"
+  },
+  "name": "Da Grasso",
+  "type": [
+    "pizza"
+  ],
+  "adress": {
+    "city": "Nowy Targ",
+    "street": "Kowaniec 14"
+  },
+  "image": "dagrasso.png"
+},
+{
+  "_id": {
+    "$oid": "65573c658969759f7a10b886"
+  },
+  "name": "McDonald's",
+  "type": [
+    "fastfood"
+  ],
+  "adress": {
+    "city": "Nowy Targ",
+    "street": "Szaflasrska 43"
+  },
+  "image": "mcdonald.png"
+}]

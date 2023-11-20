@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "655776a28969759f7a10b8ac"
+  },
+  "name": "fastfood",
+  "visibleName": "FastFood",
+  "icon": "fastfood.png"
+},
+{
+  "_id": {
+    "$oid": "655779838969759f7a10b8ad"
+  },
+  "name": "kebab",
+  "visibleName": "Kebab",
+  "icon": "kebab.png"
+},
+{
+  "_id": {
+    "$oid": "655779a08969759f7a10b8ae"
+  },
+  "name": "pizza",
+  "visibleName": "Pizza",
+  "icon": "pizza.png"
+}]

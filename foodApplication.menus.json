@@ -1,0 +1,191 @@
+[{
+  "_id": {
+    "$oid": "65576d7f8969759f7a10b896"
+  },
+  "restaurant_id": "65526b32f51b32fd5601dff7",
+  "item_id": "1",
+  "name": "Kebab Rollo",
+  "type": [
+    "kebab",
+    "mieso"
+  ],
+  "price": 17,
+  "sauces": [
+    "ostry",
+    "łagodny",
+    "mieszany"
+  ],
+  "products": [
+    "pita",
+    "mięso do wyboru",
+    "sos",
+    "warzywa"
+  ],
+  "images": "rolloHossen.png"
+},
+{
+  "_id": {
+    "$oid": "65576d928969759f7a10b897"
+  },
+  "restaurant_id": "65526b32f51b32fd5601dff7",
+  "item_id": "2",
+  "name": "Kebab Amerykański",
+  "type": [
+    "kebab",
+    "mieso"
+  ],
+  "price": 18,
+  "sauces": [
+    "ketchup",
+    "majonez",
+    "musztarda"
+  ],
+  "products": [
+    "pita",
+    "mięso do wyboru",
+    "sos",
+    "warzywa",
+    "frytki"
+  ],
+  "images": "americanHossen.png"
+},
+{
+  "_id": {
+    "$oid": "65576d9a8969759f7a10b898"
+  },
+  "restaurant_id": "65526b32f51b32fd5601dff7",
+  "item_id": "3",
+  "name": "Zapiekanka Tradycyjna",
+  "type": [
+    "zapiekanka"
+  ],
+  "price": 15,
+  "toppings": [
+    "pieczarki",
+    "ser"
+  ],
+  "products": [
+    "bagietka",
+    "ser",
+    "pieczarki",
+    "sos do wyboru"
+  ],
+  "images": "zapiekankaHossen.png"
+},
+{
+  "_id": {
+    "$oid": "65576db08969759f7a10b899"
+  },
+  "restaurant_id": "65526b32f51b32fd5601dff7",
+  "item_id": "4",
+  "name": "Frytki",
+  "type": [
+    "przystawka"
+  ],
+  "price": 8,
+  "size": "średnie",
+  "products": [
+    "frytki",
+    "sos do wyboru"
+  ],
+  "images": "frytkiHossen.png"
+},
+{
+  "_id": {
+    "$oid": "65576db78969759f7a10b89a"
+  },
+  "restaurant_id": "65526b32f51b32fd5601dff7",
+  "item_id": "5",
+  "name": "Kebab Wegetariański",
+  "type": [
+    "kebab",
+    "wegetariański"
+  ],
+  "price": 16,
+  "sauces": [
+    "czosnkowy",
+    "śmietanowy"
+  ],
+  "products": [
+    "pita",
+    "falafel",
+    "sos",
+    "warzywa"
+  ],
+  "images": "wegeKebHossen.png"
+},
+{
+  "_id": {
+    "$oid": "65576dbf8969759f7a10b89b"
+  },
+  "restaurant_id": "65526b32f51b32fd5601dff7",
+  "item_id": "6",
+  "name": "Kebab Mix",
+  "type": [
+    "kebab",
+    "mieso"
+  ],
+  "price": 19,
+  "sauces": [
+    "ostry",
+    "czosnkowy",
+    "mieszany"
+  ],
+  "products": [
+    "pita",
+    "mięso mieszane",
+    "sos mieszany",
+    "warzywa",
+    "frytki"
+  ],
+  "images": "mixKebHossen.png"
+},
+{
+  "_id": {
+    "$oid": "65576dc78969759f7a10b89c"
+  },
+  "restaurant_id": "65526b32f51b32fd5601dff7",
+  "item_id": "7",
+  "name": "Zapiekanka z Kurczakiem",
+  "type": [
+    "zapiekanka"
+  ],
+  "price": 17,
+  "toppings": [
+    "kurczak",
+    "papryka",
+    "ser"
+  ],
+  "products": [
+    "bagietka",
+    "ser",
+    "pieczarki",
+    "kurczak",
+    "sos"
+  ],
+  "images": "zapKurczHossen.png"
+},
+{
+  "_id": {
+    "$oid": "65576de98969759f7a10b89f"
+  },
+  "restaurant_id": "65526b32f51b32fd5601dff7",
+  "item_id": "10",
+  "name": "Zapiekanka Hawajska",
+  "type": [
+    "zapiekanka"
+  ],
+  "price": 16,
+  "toppings": [
+    "szynka",
+    "ananas",
+    "ser"
+  ],
+  "products": [
+    "bagietka",
+    "ser",
+    "pieczarki",
+    "ananas"
+  ],
+  "images": "zapiekHawHossen.png"
+}]
