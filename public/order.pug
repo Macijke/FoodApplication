@@ -1,0 +1,24 @@
+doctype HTML
+html(lang='pl')
+    head
+        meta(charset='UTF-8')
+        title= "Zamów z " + restauration.name + " online!"
+        link(rel="stylesheet",href="./css/style.css")
+        link(href="https://fonts.googleapis.com/css2?family=Marhey&display=swap",rel="stylesheet")
+    body
+        h1= restauration.name
+        div.menuGrid
+            each val in menu
+                a(href="/cart")
+                    div.menuContainer
+                        img(src="./images/menu/" + val.images)
+                        div.menuNameText
+                            =val.name
+                        div.productsText
+                            each product, index in val.products
+                                if index === val.products.length -1
+                                    =product
+                                else
+                                    =product + ", "
+                        div.priceText
+                            = val.price + " PLN"

@@ -2,29 +2,46 @@ const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
 const Restauration = require("./restauration-model.js");
-const pug = require("pug");
+const Menu = require('./menu-model.js');
+const Filter = require('./filter-model.js');
+const ObjectId = mongoose.Types.ObjectId;
 const app = express();
+
 app.set('views', './public');
 app.set("view engine", "pug");
 app.use(express.static(__dirname + '/public'));
 app.use('images', express.static(path.join(__dirname,'/public/images')));
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, "/public/html/index.html"));
+    mongoose.connect("mongodb://127.0.0.1:27017/foodApplication");
+    res.render('index');
 });
 
 app.get('/filter', (req, res) => {
     let foodType = req.query.foodType;
-    Restauration.find({type: foodType}).then((data) => {
-        res.render('restaurations', {restaurations: data});
+    Restauration.find({type: foodType}).then((rest) => {
+        Filter.find().then((data) => {
+            res.render('restaurations', {filters: data, restaurations: rest});
+        });
     });
 })
 
 app.get('/restaurations', (req, res) => {
-    mongoose.connect("mongodb://127.0.0.1:27017/foodApplication");
-    Restauration.find().then((data) => {
-        res.render('restaurations', {restaurations: data});
-        console.log(data);
+    Restauration.find().then((rest) => {
+        Filter.find().then((data) => {
+            res.render('restaurations', {filters: data, restaurations: rest});
+            console.log(rest);
+        });
     });
+    
+});
+
+app.get('/order', (req, res) => {
+    let rID = req.query.r;
+    Menu.find({restaurant_id: rID}).then((data) => {
+        Restauration.findOne({_id: new ObjectId(rID)}).then((rest) => {
+            res.render('order', {menu: data, restauration: rest});
+        });
+    })
 });
 
 app.listen(3000);

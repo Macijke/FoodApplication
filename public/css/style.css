@@ -20,7 +20,8 @@ a:visited {
 }
 
 .foodGrid {
-  margin: 0;
+  margin-left: 20%;
+  max-width: 60%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -40,16 +41,13 @@ a:visited {
 
 .foodContainer img {
   transition: transform 0.5s ease;
+  max-width: 200%;
+  height: auto;
+  display: block;
 }
 
 .foodContainer:hover img {
   transform: scale(1.1);
-}
-
-img {
-  max-width: 200%;
-  height: auto;
-  display: block;
 }
 
 .overlay {
@@ -76,6 +74,108 @@ img {
   text-align: center;
   font-size: 2.5em;
   padding: 22px;
+}
+
+.sidenav {
+  margin-left: 2%;
+  width: 15%;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  left: 10px;
+  background: #eee;
+  overflow-x: hidden;
+  padding: 8px 0;
+  font-family: "Marhey", "sans-serif";
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 1.6em;
+  color: black;
+  display: block;
+}
+.sidenav a img {
+  float: left;
+  width: 1.25em;
+  margin-right: 5%;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+h1 {
+  font-size: 3em;
+  text-align: center;
+  font-family: "Marhey", "sans-serif";
+}
+
+.filterIcons {
+  width: 30%;
+}
+
+.menuContainer {
+  transition: transform 0.5s ease;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  min-width: 400px;
+  flex: 1;
+  margin: 10px;
+  font-family: "Marhey", "sans-serif";
+  border: 1px solid rgba(11, 29, 24, 0.2);
+}
+
+.menuContainer:hover {
+  transform: scale(1.05);
+}
+
+.menuContainer img {
+  max-width: 35%;
+  float: left;
+  margin: 2%;
+  border-radius: 10px;
+}
+
+.menuGrid {
+  margin-left: 10%;
+  max-width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.priceText {
+  color: #000;
+  text-align: center;
+  font-size: 1.5em;
+  clear: both;
+}
+
+.menuNameText {
+  color: #000;
+  font-size: 1.5em;
+  padding: 5% 0% 0% 0%;
+  text-align: left;
+}
+
+.productsText {
+  color: #000;
+  font-size: 0.85em;
+  padding: 2%;
+  text-align: left;
 }
 
 /*# sourceMappingURL=style.css.map */
