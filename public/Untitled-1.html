@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Form-v10 by Colorlib</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="css/form.css" />
+  <meta name="robots" content="noindex, follow">
+  <script
+    nonce="2e6e6e89-2cf9-41dd-8b32-116b6769e1cb">(function (w, d) { !function (j, k, l, m) { j[l] = j[l] || {}; j[l].executed = []; j.zaraz = { deferred: [], listeners: [] }; j.zaraz.q = []; j.zaraz._f = function (n) { return async function () { var o = Array.prototype.slice.call(arguments); j.zaraz.q.push({ m: n, a: o }) } }; for (const p of ["track", "set", "debug"]) j.zaraz[p] = j.zaraz._f(p); j.zaraz.init = () => { var q = k.getElementsByTagName(m)[0], r = k.createElement(m), s = k.getElementsByTagName("title")[0]; s && (j[l].t = k.getElementsByTagName("title")[0].text); j[l].x = Math.random(); j[l].w = j.screen.width; j[l].h = j.screen.height; j[l].j = j.innerHeight; j[l].e = j.innerWidth; j[l].l = j.location.href; j[l].r = k.referrer; j[l].k = j.screen.colorDepth; j[l].n = k.characterSet; j[l].o = (new Date).getTimezoneOffset(); if (j.dataLayer) for (const w of Object.entries(Object.entries(dataLayer).reduce(((x, y) => ({ ...x[1], ...y[1] })), {}))) zaraz.set(w[0], w[1], { scope: "page" }); j[l].q = []; for (; j.zaraz.q.length;) { const z = j.zaraz.q.shift(); j[l].q.push(z) } r.defer = !0; for (const A of [localStorage, sessionStorage]) Object.keys(A || {}).filter((C => C.startsWith("_zaraz_"))).forEach((B => { try { j[l]["z_" + B.slice(7)] = JSON.parse(A.getItem(B)) } catch { j[l]["z_" + B.slice(7)] = A.getItem(B) } })); r.referrerPolicy = "origin"; r.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(j[l]))); q.parentNode.insertBefore(r, q) };["complete", "interactive"].includes(k.readyState) ? zaraz.init() : j.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
+</head>
+
+<body class="form-v10">
+  <div class="page-content">
+    <div class="form-v10-content">
+      <form class="form-detail" action="#" method="post" id="myform">
+        <div class="form-left">
+          <h2>General Infomation</h2>
+          <div class="form-row">
+            <select name="title">
+              <option class="option" value="title">Title</option>
+              <option class="option" value="businessman">Businessman</option>
+              <option class="option" value="reporter">Reporter</option>
+              <option class="option" value="secretary">Secretary</option>
+            </select>
+            <span class="select-btn">
+              <i class="zmdi zmdi-chevron-down"></i>
+            </span>
+          </div>
+          <div class="form-group">
+            <div class="form-row form-row-1">
+              <input type="text" name="first_name" id="first_name" class="input-text" placeholder="First Name" required>
+            </div>
+            <div class="form-row form-row-2">
+              <input type="text" name="last_name" id="last_name" class="input-text" placeholder="Last Name" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <select name="position">
+              <option value="position">Position</option>
+              <option value="director">Director</option>
+              <option value="manager">Manager</option>
+              <option value="employee">Employee</option>
+            </select>
+            <span class="select-btn">
+              <i class="zmdi zmdi-chevron-down"></i>
+            </span>
+          </div>
+          <div class="form-row">
+            <input type="text" name="company" class="company" id="company" placeholder="Company" required>
+          </div>
+          <div class="form-group">
+            <div class="form-row form-row-3">
+              <input type="text" name="business" class="business" id="business" placeholder="Business Arena" required>
+            </div>
+            <div class="form-row form-row-4">
+              <select name="employees">
+                <option value="employees">Employees</option>
+                <option value="trainee">Trainee</option>
+                <option value="colleague">Colleague</option>
+                <option value="associate">Associate</option>
+              </select>
+              <span class="select-btn">
+                <i class="zmdi zmdi-chevron-down"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="form-right">
+          <h2>Contact Details</h2>
+          <div class="form-row">
+            <input type="text" name="street" class="street" id="street" placeholder="Street + Nr" required>
+          </div>
+          <div class="form-row">
+            <input type="text" name="additional" class="additional" id="additional" placeholder="Additional Information"
+              required>
+          </div>
+          <div class="form-group">
+            <div class="form-row form-row-1">
+              <input type="text" name="zip" class="zip" id="zip" placeholder="Zip Code" required>
+            </div>
+            <div class="form-row form-row-2">
+              <select name="place">
+                <option value="place">Place</option>
+                <option value="Street">Street</option>
+                <option value="District">District</option>
+                <option value="City">City</option>
+              </select>
+              <span class="select-btn">
+                <i class="zmdi zmdi-chevron-down"></i>
+              </span>
+            </div>
+          </div>
+          <div class="form-row">
+            <select name="country">
+              <option value="country">Country</option>
+              <option value="Vietnam">Vietnam</option>
+              <option value="Malaysia">Malaysia</option>
+              <option value="India">India</option>
+            </select>
+            <span class="select-btn">
+              <i class="zmdi zmdi-chevron-down"></i>
+            </span>
+          </div>
+          <div class="form-group">
+            <div class="form-row form-row-1">
+              <input type="text" name="code" class="code" id="code" placeholder="Code +" required>
+            </div>
+            <div class="form-row form-row-2">
+              <input type="text" name="phone" class="phone" id="phone" placeholder="Phone Number" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <input type="text" name="your_email" id="your_email" class="input-text" required
+              pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Your Email">
+          </div>
+          <div class="form-checkbox">
+            <label class="container">
+              <p>I do accept the <a href="#" class="text">Terms and Conditions</a> of your site.</p>
+              <input type="checkbox" name="checkbox">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="form-row-last">
+            <input type="submit" name="register" class="register" value="Register Badge">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+  </script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
+    integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
+    data-cf-beacon='{"rayId":"82978c4a994dbf76","version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

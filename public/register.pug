@@ -1,0 +1,48 @@
+doctype HTML
+html(lang='pl')
+    head
+        meta(charset='UTF-8')
+        title Rejestracja
+        link(rel="stylesheet",href="./css/form.css")
+        link(href="https://fonts.googleapis.com/css2?family=Marhey&display=swap",rel="stylesheet")
+    body
+        div.page-content
+            div.form-v10-content
+                form.form-detail(method='post',action='#')
+                    div.form-left
+                        h2 Twoje dane do konta
+                        div.form-row
+                            label(for='firstName') Imię
+                            input#firstName(type='text',name='firstName')
+
+                        div.form-row
+                            label(for='lastName') Nazwisko
+                            input#lastName(type='text',name='lastName')
+
+                        div.form-row
+                            label(for='email') E-mail
+                            input#email(type='text',name='email')
+
+                        div.form-row
+                            label(for='password') Hasło
+                            input#password(type='password',name='password')
+
+                        div.form-row
+                            label(for='rPassword') Powtórz hasło
+                            input#rPassword(type='password',name='rPassword')
+                    div.form-right
+                        h2 Dane do dostaw jedzenia
+                        div.form-row
+                            label(for='adressCity') Miejscowość
+                            input#adressCity(type='text',name='adressCity')
+                        div.form-row
+                            label(for='adressStreet') Ulica
+                            input#adressStreet(type='text',name='adressStreet')
+                        div.form-row
+                            label(for='adressNumber') Numer budynku
+                            input#adressNumber(type='text',name='adressStreet')
+                        div.form-row
+                            label(for='adressLocal') Numer mieszkania
+                            input#adressLocal(type='text',name='adressLocal')
+                        div.form-row
+                            input.register(type='submit', value='Zarejestruj')

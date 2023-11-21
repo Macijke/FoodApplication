@@ -29,7 +29,6 @@ app.get('/restaurations', (req, res) => {
     Restauration.find().then((rest) => {
         Filter.find().then((data) => {
             res.render('restaurations', {filters: data, restaurations: rest});
-            console.log(rest);
         });
     });
     
@@ -42,6 +41,10 @@ app.get('/order', (req, res) => {
             res.render('order', {menu: data, restauration: rest});
         });
     })
+});
+
+app.get('/account', (req, res) => {
+    res.render('register');
 });
 
 app.listen(3000);
