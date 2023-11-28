@@ -7,9 +7,12 @@ html(lang='pl')
         link(href="https://fonts.googleapis.com/css2?family=Marhey&display=swap",rel="stylesheet")
     body
         h1= restauration.name
+        if food != null
+            div.windowGrid
+            
         div.menuGrid
             each val in menu
-                a(href="/cart")
+                a(href="/conf?r="+ restauration._id + "&f=" + val._id)
                     div.menuContainer
                         img(src="./images/menu/" + val.images)
                         div.menuNameText

@@ -43,6 +43,20 @@ app.get('/order', (req, res) => {
     })
 });
 
+app.get('/conf', (req, res) => {
+    mongoose.connect("mongodb://127.0.0.1:27017/foodApplication");
+
+    let rID = req.query.r;
+    let fID = req.query.f;
+    Menu.find({restaurant_id: rID}).then((data) => {
+        Restauration.findOne({_id: new ObjectId(rID)}).then((rest) => {
+            Menu.findOne({_id: new ObjectId(fID)}).then((food) => {
+                res.render('order', {menu: data, restauration: rest, food: food});
+            });
+        });
+    })
+});
+
 app.get('/account', (req, res) => {
     res.render('register');
 });
