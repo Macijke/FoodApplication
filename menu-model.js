@@ -7,6 +7,8 @@ let menuSchema = new Schema({
     name:String,
     type:Array,
     price:Number,
+    sauces: Array,
+    meat: Array,
     products:Array,
     images:String
 });

@@ -51,7 +51,8 @@ app.get('/conf', (req, res) => {
     Menu.find({restaurant_id: rID}).then((data) => {
         Restauration.findOne({_id: new ObjectId(rID)}).then((rest) => {
             Menu.findOne({_id: new ObjectId(fID)}).then((food) => {
-                res.render('order', {menu: data, restauration: rest, food: food});
+                res.render('order', {menu: data, restauration: rest, dish: food});
+                console.log(food);
             });
         });
     })

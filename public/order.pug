@@ -7,9 +7,33 @@ html(lang='pl')
         link(href="https://fonts.googleapis.com/css2?family=Marhey&display=swap",rel="stylesheet")
     body
         h1= restauration.name
-        if food != null
-            div.windowGrid
-            
+        if dish != null
+            div#windowGrid
+                div.windowContent
+                    div.leftWindowContent
+                        div.addons
+                            if dish.sauces != undefined
+                                h2 Wybierz sos
+                                each sauce in dish.sauces
+                                    label.custom-radio
+                                        input(type='radio', name='sauceRadio')
+                                        span.radio-label= sauce
+                            if dish.meat != undefined
+                                h2 Wybierz mięso
+                                each meat in dish.meat
+                                    label.custom-radio
+                                        input(type='radio', name='meatRadio')
+                                        span.radio-label= meat
+                    div.rightWindowContent
+                        h1= dish.name
+                        div.winImg
+                            img(src='./images/menu/' + dish.images)
+                        div.productsText
+                            each prodct, index in dish.products
+                                if index === dish.products.length -1
+                                    =prodct
+                                else
+                                    =prodct + ", "
         div.menuGrid
             each val in menu
                 a(href="/conf?r="+ restauration._id + "&f=" + val._id)

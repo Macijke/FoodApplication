@@ -1,3 +1,7 @@
+html {
+    font-family: 'Marhey', 'sans-serif';
+}
+
 nav {
     display: flex;
     justify-content:space-between;
@@ -179,23 +183,108 @@ h1 {
     text-align: left;
 }
 
-#popupContainer {
-    display: none;
+#windowGrid {
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
 }
 
-.popupContent {
-    position: absolute;
+.windowContent {
+    width: 60vw;
+    height: 75vh;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: #fff;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+.custom-radio {
+    display: flex;
+    margin-right: 20px;
+    margin-top: 7px;
+    align-items: center;
+    padding: 8px 16px;
+    width: 31vw;
+}
+
+input[type="radio"] {
+    position: absolute;
+    margin-left: 28.5vw;
+    background-color: #ffffff;
+    width: 30px;
+    height: 30px;
+    &:checked + .radio-label {
+        border: 1px solid green;
+        font-weight: 600;
+    }
+}
+
+input[type="radio"]:checked {
+    border-radius: 5px;
+    position: absolute;
+  &:before {
+      content: "✓";
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+}
+
+.radio-label {
+    align-items: center;
+    display: flex;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s, color 0.3s;
+    width: 30vw;
+    height: 38px;
+    font-size: 20px;
+    &:hover {
+        background-color: #f2f2f2;
+    }
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+.leftWindowContent {
+    overflow-y: scroll;
+    height: 75vh;
+    width: 35vw;
+    float: left;
+}
+
+.rightWindowContent {
+    width: 25vw;
+    float: right;
+    margin: 0;
+    .productsText {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+.winImg {
+    text-align: center;
+    img {
+        width: 28vh;
+    }
+}
+
