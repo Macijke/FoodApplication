@@ -34,6 +34,9 @@ html(lang='pl')
                                     =prodct
                                 else
                                     =prodct + ", "
+                        div.btnContent
+                            form(action='#', method='POST')
+                                button.cartBtn Dodaj do koszyka
         div.menuGrid
             each val in menu
                 a(href="/conf?r="+ restauration._id + "&f=" + val._id)

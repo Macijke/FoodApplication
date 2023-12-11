@@ -1,14 +1,17 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
+const session = require('express-session');
 const Restauration = require("./restauration-model.js");
 const Menu = require('./menu-model.js');
 const Filter = require('./filter-model.js');
 const ObjectId = mongoose.Types.ObjectId;
 const app = express();
 
+app.set('trust proxy', 1) // trust first proxy
 app.set('views', './public');
 app.set("view engine", "pug");
+app.use(express.json());
 app.use(express.static(__dirname + '/public'));
 app.use('images', express.static(path.join(__dirname,'/public/images')));
 app.get('/', (req, res) => {
@@ -21,6 +24,7 @@ app.get('/filter', (req, res) => {
     Restauration.find({type: foodType}).then((rest) => {
         Filter.find().then((data) => {
             res.render('restaurations', {filters: data, restaurations: rest});
+
         });
     });
 })
@@ -52,10 +56,13 @@ app.get('/conf', (req, res) => {
         Restauration.findOne({_id: new ObjectId(rID)}).then((rest) => {
             Menu.findOne({_id: new ObjectId(fID)}).then((food) => {
                 res.render('order', {menu: data, restauration: rest, dish: food});
-                console.log(food);
             });
         });
     })
+});
+
+app.post('/conf', (req, res) => {
+    console.log(res.json({requestBody: req.body}));
 });
 
 app.get('/account', (req, res) => {
