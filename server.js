@@ -5,15 +5,26 @@ const session = require('express-session');
 const Restauration = require("./restauration-model.js");
 const Menu = require('./menu-model.js');
 const Filter = require('./filter-model.js');
+const bodyParser = require('body-parser');
+
 const ObjectId = mongoose.Types.ObjectId;
 const app = express();
 
-app.set('trust proxy', 1) // trust first proxy
+app.use(bodyParser.urlencoded({ extended: false }));
+app.set('trust proxy', 1);
 app.set('views', './public');
 app.set("view engine", "pug");
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));
 app.use('images', express.static(path.join(__dirname,'/public/images')));
+
+app.use(session({
+    secret: 'password',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+}));
+
 app.get('/', (req, res) => {
     mongoose.connect("mongodb://127.0.0.1:27017/foodApplication");
     res.render('index');
@@ -49,7 +60,7 @@ app.get('/order', (req, res) => {
 
 app.get('/conf', (req, res) => {
     mongoose.connect("mongodb://127.0.0.1:27017/foodApplication");
-
+    console.log(req.session.cartOrder);
     let rID = req.query.r;
     let fID = req.query.f;
     Menu.find({restaurant_id: rID}).then((data) => {
@@ -62,7 +73,7 @@ app.get('/conf', (req, res) => {
 });
 
 app.post('/conf', (req, res) => {
-    console.log(res.json({requestBody: req.body}));
+    req.session.cartOrder = {"sos" : req.body.sauceRadio, "mieso": req.body.meatRadio};
 });
 
 app.get('/account', (req, res) => {
