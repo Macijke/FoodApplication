@@ -11,19 +11,22 @@ html(lang='pl')
             div#windowGrid
                 div.windowContent
                     div.leftWindowContent
-                        div.addons
-                            if dish.sauces != undefined
-                                h2 Wybierz sos
-                                each sauce in dish.sauces
-                                    label.custom-radio
-                                        input(type='radio', name='sauceRadio')
-                                        span.radio-label= sauce
-                            if dish.meat != undefined
-                                h2 Wybierz mięso
-                                each meat in dish.meat
-                                    label.custom-radio
-                                        input(type='radio', name='meatRadio')
-                                        span.radio-label= meat
+                        form(action="#", method="post") 
+                            div.addons
+                                if dish.sauces != undefined
+                                    h2 Wybierz sos
+                                    each sauce in dish.sauces
+                                        label.custom-radio
+                                            input(type='radio', name='sauceRadio', value=sauce)
+                                            span.radio-label= sauce
+                                if dish.meat != undefined
+                                    h2 Wybierz mięso
+                                    each meat in dish.meat
+                                        label.custom-radio
+                                            input(type='radio', name='meatRadio', value=meat)
+                                            span.radio-label= meat
+                            div.btnContent
+                                button.cartBtn Dodaj do koszyka
                     div.rightWindowContent
                         h1= dish.name
                         div.winImg
@@ -34,9 +37,6 @@ html(lang='pl')
                                     =prodct
                                 else
                                     =prodct + ", "
-                        div.btnContent
-                            form(action='#', method='POST')
-                                button.cartBtn Dodaj do koszyka
         div.menuGrid
             each val in menu
                 a(href="/conf?r="+ restauration._id + "&f=" + val._id)
