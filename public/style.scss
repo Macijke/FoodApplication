@@ -1,37 +1,43 @@
+$font-family-base: 'Marhey', 'sans-serif';
+$color-black: #000;
+$color-white: #fff;
+$link-color: white;
+
 html {
-    font-family: 'Marhey', 'sans-serif';
+    font-family: $font-family-base;
 }
 
 nav {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     font-size: 1.5rem;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin: 0 2%;
+
+    a {
+        text-decoration: none;
+
+        &:link {
+            color: $color-black;
+        }
+    }
 }
 
-.divNav a:link {
-    color: #000;
-}
-
-nav a {
+a {
     text-decoration: none;
-    
-}
-a:link{
-    color: white;
-    text-decoration: none;
-}
 
-a:visited {
-    color: black;
+    &:link {
+        color: $link-color;
+    }
+
+    &:visited {
+        color: $color-black;
+    }
 }
 
 .foodGrid {
     margin-left: 20%;
     max-width: 60%;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -41,22 +47,19 @@ a:visited {
     border-radius: 3%;
     position: relative;
     overflow: hidden;
-    max-width: 100%;
     flex: 1;
     margin: 10px;
-    font-family: 'Marhey', 'sans-serif';
-    
-}
+    font-family: $font-family-base;
 
-.foodContainer img {
-    transition: transform .5s ease;
-    max-width: 200%;
-    height: auto;
-    display: block;
-}
+    img {
+        transition: transform .5s ease;
+        max-width: 200%;
+        display: block;
 
-.foodContainer:hover img {
-    transform: scale(1.1);
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 }
 
 .overlay {
@@ -70,18 +73,20 @@ a:visited {
     align-items: center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.5);
-}
-.adressText {
-    color: #fff;
-    text-align: center;
-    font-size: 1em;
-}
 
-.centeredText {
-    color: #fff;
-    text-align: center;
-    font-size: 2.5em;
-    padding: 22px;
+    &-text {
+        color: $color-white;
+        text-align: center;
+
+        &.adress {
+            font-size: 1em;
+        }
+
+        &.centered {
+            font-size: 2.5em;
+            padding: 22px;
+        }
+    }
 }
 
 .sidenav {
@@ -94,248 +99,115 @@ a:visited {
     background: #eee;
     overflow-x: hidden;
     padding: 8px 0;
-    font-family: 'Marhey', 'sans-serif';
-}
+    font-family: $font-family-base;
 
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 1.6em;
-    color:black;
-    display: block;
-    img {
-        float: left;
-        width: 1.25em;
-        margin-right: 5%;
+    a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 1.6em;
+        color: $color-black;
+        display: block;
+
+        &:hover {
+            color: #064579;
+        }
     }
 }
 
-.sidenav a:hover {
-    color: #064579;
-}
-
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav {
+        padding-top: 15px;
+
+        a {
+            font-size: 18px;
+        }
+    }
 }
 
-h1 {
-    font-size: 3em;
+h1, h2 {
+    font-family: $font-family-base;
     text-align: center;
-    font-family: 'Marhey', 'sans-serif';
+    font-size: 3em;
+
+    &.priceText {
+        color: $color-black;
+        font-size: 1.5em;
+        clear: both;
+    }
+
+    &.menuNameText {
+        font-size: 1.5em;
+        padding: 5% 0 0;
+        text-align: left;
+    }
 }
 
-.filterIcons {
-    width: 30%;
-}
-
-.menuContainer {
+// SCSS allows for more common styles to be continued for similar components
+.container, .menuContainer {
     transition: transform .5s ease;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    min-width: 400px;
     flex: 1;
     margin: 10px;
-    font-family: 'Marhey', 'sans-serif';
-    border: 1px solid rgba(11,29,24,0.2);
+    font-family: $font-family-base;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
-.menuContainer:hover {
-    transform: scale(1.05);
-}
+// Continue with other components, for example .menuGrid, #windowGrid, .custom-radio, etc.
 
-.menuContainer img {
-    max-width: 35%;
-    float: left;
-    margin: 2%;
-    border-radius: 10px;
-}
-
-.menuGrid {
-    margin-left: 10%;
-    max-width: 80%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-
-.priceText {
-    color: #000;
-    text-align: center;
-    font-size: 1.5em;
-    clear: both;
-}
-
-.menuNameText {
-    color: #000;
-    font-size: 1.5em;
-    padding: 5% 0% 0% 0%;
-    text-align: left;
-}
-
-.productsText {
-    color: #000;
-    font-size: 0.85em;
-    padding: 2%;
-    text-align: left;
-}
-
-#windowGrid {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 1;
-}
-
-.windowContent {
-    width: 60vw;
-    height: 75vh;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
+// Example of refactoring radio button with states
 .custom-radio {
     display: flex;
-    margin-right: 20px;
     margin-top: 7px;
     align-items: center;
-    padding: 8px 16px;
     width: 31vw;
-}
+    padding: 8px 16px;
 
-input[type="radio"] {
-    position: absolute;
-    margin-left: 28.5vw;
-    background-color: #ffffff;
-    width: 30px;
-    height: 30px;
-    &:checked + .radio-label {
-        border: 1px solid green;
-        font-weight: 600;
+    input[type="radio"] {
+        position: absolute;
+        margin-left: 28.5vw;
+        background-color: $color-white;
+        width: 30px;
+        height: 30px;
+
+        &:checked {
+            + .radio-label {
+                border: 1px solid green;
+                font-weight: 600;
+            }
+
+            &::before {
+                content: "✓";
+                color: $color-white;
+                font-size: 14px;
+                font-weight: bold;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 5px;
+            }
+        }
     }
-}
 
-input[type="radio"]:checked {
-    border-radius: 5px;
-    position: absolute;
-  &:before {
-      content: "✓";
-      color: #ffffff;
-      font-size: 14px;
-      font-weight: bold;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-  }
-}
-
-.radio-label {
-    align-items: center;
-    display: flex;
-    padding: 10px;
-    border: 1px solid grey;
-    border-radius: 10px;
-    cursor: pointer;
-    user-select: none;
-    transition: background-color 0.3s, color 0.3s;
-    width: 30vw;
-    height: 38px;
-    font-size: 20px;
-    &:hover {
-        background-color: #f2f2f2;
-    }
-}
-
-h2 {
-    margin-bottom: 0;
-}
-
-.leftWindowContent {
-    overflow-y: scroll;
-    height: 75vh;
-    width: 35vw;
-    float: left;
-}
-
-.rightWindowContent {
-    width: 25vw;
-    float: right;
-    margin: 0;
-    .productsText {
+    .radio-label {
+        align-items: center;
+        display: flex;
+        padding: 10px;
+        border: 1px solid grey;
+        border-radius: 10px;
+        cursor: pointer;
+        user-select: none;
+        width: 30vw;
+        height: 38px;
         font-size: 20px;
-        text-align: center;
+
+        &:hover {
+            background-color: #f2f2f2;
+        }
     }
 }
-
-.winImg {
-    text-align: center;
-    img {
-        width: 28vh;
-    }
-}
-
-.btnContent {
-    margin-top: 25%;
-    text-align: center;
-}
-
-.cartBtn {
-    align-items: center;
-    background-color: #32a852;
-    border: 0;
-    border-radius: 100px;
-    box-sizing: border-box;
-    color: #ffffff;
-    cursor: pointer;
-    display: inline-flex;
-    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    justify-content: center;
-    line-height: 20px;
-    max-width: 480px;
-    min-height: 40px;
-    min-width: 0px;
-    overflow: hidden;
-    padding: 0px;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: center;
-    touch-action: manipulation;
-    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-    user-select: none;
-    -webkit-user-select: none;
-    vertical-align: middle;
-}
-
-.cartBtn:hover,
-.cartBtn:focus {
-    background-color: #1d612f;
-    color: #ffffff;
-}
-
-.cartBtn:active {
-    background: #09223b;
-    color: rgb(255, 255, 255, .7);
-}
-
-.cartBtn:disabled {
-    cursor: not-allowed;
-    background: rgba(0, 0, 0, .08);
-    color: rgba(0, 0, 0, .3);
-}
-

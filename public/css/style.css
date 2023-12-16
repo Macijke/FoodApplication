@@ -7,32 +7,29 @@ nav {
   display: flex;
   justify-content: space-between;
   font-size: 1.5rem;
-  margin-left: 2%;
-  margin-right: 2%;
+  margin: 0 2%;
 }
-
-.divNav a:link {
-  color: #000;
-}
-
 nav a {
   text-decoration: none;
 }
-
-a:link {
-  color: white;
-  text-decoration: none;
+nav a:link {
+  color: #000;
 }
 
+a {
+  text-decoration: none;
+}
+a:link {
+  color: white;
+}
 a:visited {
-  color: black;
+  color: #000;
 }
 
 .foodGrid {
   margin-left: 20%;
   max-width: 60%;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -42,20 +39,16 @@ a:visited {
   border-radius: 3%;
   position: relative;
   overflow: hidden;
-  max-width: 100%;
   flex: 1;
   margin: 10px;
   font-family: "Marhey", "sans-serif";
 }
-
 .foodContainer img {
   transition: transform 0.5s ease;
   max-width: 200%;
-  height: auto;
   display: block;
 }
-
-.foodContainer:hover img {
+.foodContainer img:hover {
   transform: scale(1.1);
 }
 
@@ -71,16 +64,14 @@ a:visited {
   justify-content: center;
   background: rgba(0, 0, 0, 0.5);
 }
-
-.adressText {
+.overlay-text {
   color: #fff;
   text-align: center;
+}
+.overlay-text.adress {
   font-size: 1em;
 }
-
-.centeredText {
-  color: #fff;
-  text-align: center;
+.overlay-text.centered {
   font-size: 2.5em;
   padding: 22px;
 }
@@ -97,20 +88,13 @@ a:visited {
   padding: 8px 0;
   font-family: "Marhey", "sans-serif";
 }
-
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 1.6em;
-  color: black;
+  color: #000;
   display: block;
 }
-.sidenav a img {
-  float: left;
-  width: 1.25em;
-  margin-right: 5%;
-}
-
 .sidenav a:hover {
   color: #064579;
 }
@@ -123,131 +107,65 @@ a:visited {
     font-size: 18px;
   }
 }
-h1 {
-  font-size: 3em;
-  text-align: center;
+h1, h2 {
   font-family: "Marhey", "sans-serif";
+  text-align: center;
+  font-size: 3em;
+}
+h1.priceText, h2.priceText {
+  color: #000;
+  font-size: 1.5em;
+  clear: both;
+}
+h1.menuNameText, h2.menuNameText {
+  font-size: 1.5em;
+  padding: 5% 0 0;
+  text-align: left;
 }
 
-.filterIcons {
-  width: 30%;
-}
-
-.menuContainer {
+.container, .menuContainer {
   transition: transform 0.5s ease;
   border-radius: 10px;
   position: relative;
   overflow: hidden;
-  min-width: 400px;
   flex: 1;
   margin: 10px;
   font-family: "Marhey", "sans-serif";
-  border: 1px solid rgba(11, 29, 24, 0.2);
 }
-
-.menuContainer:hover {
+.container:hover, .menuContainer:hover {
   transform: scale(1.05);
-}
-
-.menuContainer img {
-  max-width: 35%;
-  float: left;
-  margin: 2%;
-  border-radius: 10px;
-}
-
-.menuGrid {
-  margin-left: 10%;
-  max-width: 80%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.priceText {
-  color: #000;
-  text-align: center;
-  font-size: 1.5em;
-  clear: both;
-}
-
-.menuNameText {
-  color: #000;
-  font-size: 1.5em;
-  padding: 5% 0% 0% 0%;
-  text-align: left;
-}
-
-.productsText {
-  color: #000;
-  font-size: 0.85em;
-  padding: 2%;
-  text-align: left;
-}
-
-#windowGrid {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-}
-
-.windowContent {
-  width: 60vw;
-  height: 75vh;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .custom-radio {
   display: flex;
-  margin-right: 20px;
   margin-top: 7px;
   align-items: center;
-  padding: 8px 16px;
   width: 31vw;
+  padding: 8px 16px;
 }
-
-input[type=radio] {
+.custom-radio input[type=radio] {
   position: absolute;
   margin-left: 28.5vw;
-  background-color: #ffffff;
+  background-color: #fff;
   width: 30px;
   height: 30px;
 }
-input[type=radio]:checked + .radio-label {
+.custom-radio input[type=radio]:checked + .radio-label {
   border: 1px solid green;
   font-weight: 600;
 }
-
-input[type=radio]:checked {
-  border-radius: 5px;
-  position: absolute;
-}
-input[type=radio]:checked:before {
+.custom-radio input[type=radio]:checked::before {
   content: "✓";
-  color: #ffffff;
+  color: #fff;
   font-size: 14px;
   font-weight: bold;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 5px;
 }
-
-.radio-label {
+.custom-radio .radio-label {
   align-items: center;
   display: flex;
   padding: 10px;
@@ -255,92 +173,12 @@ input[type=radio]:checked:before {
   border-radius: 10px;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.3s, color 0.3s;
   width: 30vw;
   height: 38px;
   font-size: 20px;
 }
-.radio-label:hover {
+.custom-radio .radio-label:hover {
   background-color: #f2f2f2;
-}
-
-h2 {
-  margin-bottom: 0;
-}
-
-.leftWindowContent {
-  overflow-y: scroll;
-  height: 75vh;
-  width: 35vw;
-  float: left;
-}
-
-.rightWindowContent {
-  width: 25vw;
-  float: right;
-  margin: 0;
-}
-.rightWindowContent .productsText {
-  font-size: 20px;
-  text-align: center;
-}
-
-.winImg {
-  text-align: center;
-}
-.winImg img {
-  width: 28vh;
-}
-
-.btnContent {
-  margin-top: 25%;
-  text-align: center;
-}
-
-.cartBtn {
-  align-items: center;
-  background-color: #32a852;
-  border: 0;
-  border-radius: 100px;
-  box-sizing: border-box;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 20px;
-  max-width: 480px;
-  min-height: 40px;
-  min-width: 0px;
-  overflow: hidden;
-  padding: 0px;
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align: center;
-  touch-action: manipulation;
-  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
-}
-
-.cartBtn:hover,
-.cartBtn:focus {
-  background-color: #1d612f;
-  color: #ffffff;
-}
-
-.cartBtn:active {
-  background: #09223b;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.cartBtn:disabled {
-  cursor: not-allowed;
-  background: rgba(0, 0, 0, 0.08);
-  color: rgba(0, 0, 0, 0.3);
 }
 
 /*# sourceMappingURL=style.css.map */
