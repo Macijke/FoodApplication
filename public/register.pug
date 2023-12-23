@@ -8,41 +8,54 @@ html(lang='pl')
     body
         div.page-content
             div.form-v10-content
-                form.form-detail(method='post',action='#')
+                form.form-detail(method='post',action='/register')
                     div.form-left
                         h2 Twoje dane do konta
                         div.form-row
                             label(for='firstName') Imię
-                            input#firstName(type='text',name='firstName')
+                            input#firstName(type='text',name='firstName', value=values.firstName ? values.firstName : '')
+                            span= errors.firstName ? errors.firstName : ''
 
                         div.form-row
                             label(for='lastName') Nazwisko
-                            input#lastName(type='text',name='lastName')
+                            input#lastName(type='text',name='lastName', value=values.lastName ? values.lastName : '')
+                            span= errors.lastName ? errors.lastName : ''
 
                         div.form-row
                             label(for='email') E-mail
-                            input#email(type='text',name='email')
+                            input#email(type='text',name='email', value=values.email ? values.email : '')
+                            span= errors.email ? errors.email : ''
 
                         div.form-row
                             label(for='password') Hasło
                             input#password(type='password',name='password')
+                            span= errors.password ? errors.password : ''
 
                         div.form-row
                             label(for='rPassword') Powtórz hasło
                             input#rPassword(type='password',name='rPassword')
+                            span= errors.rPassword ? errors.rPassword : ''
+
                     div.form-right
                         h2 Dane do dostaw jedzenia
                         div.form-row
                             label(for='adressCity') Miejscowość
-                            input#adressCity(type='text',name='adressCity')
+                            input#adressCity(type='text',name='adressCity', value=values.adressCity ? values.adressCity : '')
+                            span= errors.adressCity ? errors.adressCity : ''
+
                         div.form-row
                             label(for='adressStreet') Ulica
-                            input#adressStreet(type='text',name='adressStreet')
+                            input#adressStreet(type='text',name='adressStreet', value=values.adressStreet ? values.adressStreet : '')
+                            span= errors.adressStreet ? errors.adressStreet : ''
+
                         div.form-row
                             label(for='adressNumber') Numer budynku
-                            input#adressNumber(type='text',name='adressStreet')
+                            input#adressNumber(type='text',name='adressNumber', value=values.adressNumber ? values.adressNumber : '')
+                            span= errors.adressNumber ? errors.adressNumber : ''
+
                         div.form-row
-                            label(for='adressLocal') Numer mieszkania
+                            label(for='adressLocal') Numer mieszkania (opcjonalny)
                             input#adressLocal(type='text',name='adressLocal')
+
                         div.form-row
                             input.register(type='submit', value='Zarejestruj')
