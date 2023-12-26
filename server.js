@@ -34,23 +34,17 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-app.get('/filter', (req, res) => {
+app.get('/filter', async (req, res) => {
     let foodType = req.query.foodType;
-    Restauration.find({type: foodType}).then((rest) => {
-        Filter.find().then((data) => {
-            res.render('restaurations', {filters: data, restaurations: rest});
-
-        });
-    });
+    const rest = await Restauration.find({type: foodType});
+    const data = await Filter.find();
+    res.render('restaurations', {filters: data, restaurations: rest});
 })
 
-app.get('/restaurations', (req, res) => {
-    Restauration.find().then((rest) => {
-        Filter.find().then((data) => {
-            res.render('restaurations', {filters: data, restaurations: rest});
-        });
-    });
-
+app.get('/restaurations', async (req, res) => {
+    const rest = await Restauration.find();
+    const data = await Filter.find();
+    res.render('restaurations', {filters: data, restaurations: rest});
 });
 
 app.get('/order', (req, res) => {
@@ -63,17 +57,18 @@ app.get('/order', (req, res) => {
     });
 });
 
-app.get('/conf', (req, res) => {
-    mongoose.connect("mongodb://127.0.0.1:27017/foodApplication");
+app.get('/conf', async (req, res) => {
+    await mongoose.connect("mongodb://127.0.0.1:27017/foodApplication");
     let rID = req.query.r;
     let fID = req.query.f;
-    Menu.find({restaurant_id: rID}).then((data) => {
-        Restauration.findOne({_id: new ObjectId(rID)}).then((rest) => {
-            Menu.findOne({_id: new ObjectId(fID)}).then((food) => {
-                res.render('order', {menu: data, restauration: rest, dish: food});
-            });
-        });
-    });
+    try {
+        let data = await Menu.find({restaurant_id: rID});
+        let rest = await Restauration.findOne({_id: new ObjectId(rID)});
+        let food = await Menu.findOne({_id: new ObjectId(fID)});
+        res.render('order', {menu: data, restauration: rest, dish: food});
+    } catch (error) {
+        console.error(error);
+    }
 });
 
 const registerFormValidationRules = () => {
@@ -148,7 +143,7 @@ app.post('/conf', (req, res) => {
 
     let newOrderItem = {
         restaurationId: req.query.r,
-        orderId: req.query.f,
+        foodId: req.query.f,
         sauce: req.body.sauceRadio,
         meat: req.body.meatRadio
     };
@@ -156,13 +151,30 @@ app.post('/conf', (req, res) => {
     cart.push(newOrderItem);
 
     let options = {
-        maxAge: 1000 * 60 * 15, // 15 minut
-        httpOnly: true, // plik cookie dostępny tylko z poziomu serwera HTTP
-        signed: false // plik cookie nie podpisany
+        maxAge: 1000 * 60 * 3600,
+        httpOnly: true,
+        signed: false
     };
 
     res.cookie('cart', JSON.stringify(cart), options);
     res.render('index')
+});
+
+app.get('/cart', async(req, res) => {
+    let cart = JSON.parse(req.cookies.cart);
+    const itemsWithNames = await Promise.all(cart.map(async item => {
+        const order = await Menu.findOne({_id: new ObjectId(item.foodId)}).populate('name'); // zakładając, że 'name' to pole w Twoim modelu Order, które zawiera nazwę dania
+        const restaurant = await Restauration.findOne({_id: new ObjectId(item.restaurationId)}).populate('name'); // zakładając, że 'name' to pole w Twoim modelu Restaurant, które zawiera nazwę restauracji
+        return {
+            foodId: order.name,
+            restaurationId: restaurant.name,
+            sauce: item.sauce,
+            meat: item.meat,
+            price: order.price
+        };
+    }));
+    console.log(itemsWithNames);
+    res.render('cart', {cart: itemsWithNames });
 });
 
 app.get('/account', (req, res) => {

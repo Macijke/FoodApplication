@@ -13,13 +13,13 @@ html(lang='pl')
                     div.leftWindowContent
                         form(action="#", method="post") 
                             div.addons
-                                if dish.sauces != undefined
+                                if dish.sauces != ""
                                     h2 Wybierz sos
                                     each sauce in dish.sauces
                                         label.custom-radio
                                             input(type='radio', name='sauceRadio', value=sauce)
                                             span.radio-label= sauce
-                                if dish.meat != undefined
+                                if dish.meat != ""
                                     h2 Wybierz mięso
                                     each meat in dish.meat
                                         label.custom-radio

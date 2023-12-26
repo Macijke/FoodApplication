@@ -1,0 +1,22 @@
+doctype HTML
+html(lang='pl')
+    head
+        meta(charset='UTF-8')
+        title Twój koszyk!
+        link(rel="stylesheet",href="./css/style.css")
+    body
+        h1 Twój Koszyk
+            each item in cart
+              .item
+                .name 
+                  p= item.foodId
+                .restaurant
+                  p= item.restaurationId
+                .sauce
+                  p= item.sauce
+                .meat
+                  p= item.meat
+                .price
+                  p= item.price
+            .total 
+              p= `Total: ${cart.length}`

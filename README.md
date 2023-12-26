@@ -6,18 +6,13 @@ Wykorzystywane technologie:
    - Express.JS
    - Bootstrap
    - Mongoose
-   - Pug
+   - PUG
+   - Express-Validator
+   - Cookie-Parser
 
 
 # Wszystkie komendy:
 
-``
-npm install pug-cli -g
-``
-
-``
-pug -w .\public\ -o ./public/html
-``
 
 ``
 npm install nodemon -g
