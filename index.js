@@ -7,10 +7,9 @@ const Menu = require('./src/menu-model.js');
 const Filter = require('./src/filter-model.js');
 const User = require('./src/user-model.js');
 const Order = require('./src/order-model.js');
+const {validateRegister, registerFormValidationRules} = require('./src/validation.js');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const {body, validationResult} = require('express-validator');
-const {maxAge} = require("express-session/session/cookie");
 const ObjectId = mongoose.Types.ObjectId;
 const app = express();
 
@@ -72,41 +71,6 @@ app.get('/conf', async (req, res) => {
     }
 });
 
-const registerFormValidationRules = () => {
-    return [
-        body('firstName').isLength({min: 2}).trim().withMessage('Imię musi zawierać przynajmniej 2 znaki.'),
-        body('lastName').isLength({min: 2}).trim().withMessage('Nazwisko musi zawierać przynajmniej 2 znaki.'),
-        body('email').isEmail().trim().withMessage('Proszę podać prawidłowy adres e-mail.'),
-        body('password').isLength({min: 8}).withMessage('Hasło musi zawierać co najmniej 8 znaków.'),
-        body('rPassword').custom((value, {req}) => {
-            if (value !== req.body.password) {
-                throw new Error('Hasła się nie zgadzają.');
-            }
-            return true;
-        }),
-        body('adressCity').notEmpty().trim().withMessage('Proszę podać miejscowość.'),
-        body('adressStreet').notEmpty().trim().withMessage('Proszę podać ulicę.'),
-        body('adressNumber').notEmpty().trim().withMessage('Proszę podać numer budynku.'),
-        body('adressLocal').optional()
-    ];
-};
-
-const validateRegister = (req, res, next) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        const {firstName, lastName, email, adressCity, adressStreet, adressNumber, adressLocal} = req.body;
-        let extractedErrors = {};
-        errors.array().map(error => extractedErrors[error.path] = error.msg);
-        console.log(extractedErrors);
-        return res.render('register', {
-            errors: extractedErrors,
-            values: {firstName, lastName, email, adressCity, adressStreet, adressNumber, adressLocal},
-        });
-
-    }
-    next();
-};
-
 app.get('/signup', (req, res) => {
     res.render('register', {errors: [], values: {}});
 });
@@ -114,7 +78,7 @@ app.get('/signup', (req, res) => {
 app.post('/register', registerFormValidationRules(), validateRegister, (req, res) => {
     const {firstName, lastName, email, password, adressCity, adressStreet, adressNumber, adressLocal} = req.body;
     const user = new User({
-        _id: new mongoose.Types.ObjectId(),
+        _id: new ObjectId(),
         firstName: firstName,
         lastName: lastName,
         email: email,
@@ -167,26 +131,23 @@ app.post('/conf', (req, res) => {
 
 app.get('/cart', async (req, res) => {
     mongoose.connect("mongodb://127.0.0.1:27017/foodApplication");
-    console.log(req.session.user)
-    
-    if (req.cookies.cart != undefined) {
-        let cart = JSON.parse(req.cookies.cart);
-        const itemsWithNames = await Promise.all(cart.map(async item => {
-            const order = await Menu.findOne({_id: new ObjectId(item.foodId)}).populate('name');
-            const restaurant = await Restauration.findOne({_id: new ObjectId(item.restaurationId)}).populate('name');
+    if (req.cookies.cart) {
+        let cartData = JSON.parse(req.cookies.cart);
+        const itemsDetails = await Promise.all(cartData.map(async itemData => {
+            const foodOrder = await Menu.findOne({_id: new ObjectId(itemData.foodId)}).populate('name');
+            const restro = await Restauration.findOne({_id: new ObjectId(itemData.restaurationId)}).populate('name');
             return {
-                foodId: order.name,
-                restaurationId: restaurant.name,
-                sauce: item.sauce,
-                meat: item.meat,
-                price: order.price
+                foodId: foodOrder.name,
+                restaurationId: restro.name,
+                sauce: itemData.sauce,
+                meat: itemData.meat,
+                price: foodOrder.price
             };
         }));
-        res.render('cart', {cart: itemsWithNames, JSONCart: req.cookies.cart});
+        res.render('cart', {cart: itemsDetails, JSONCart: req.cookies.cart});
     } else {
         res.render('cart', {cart: null, JSONCart: null});
     }
-
 });
 
 
@@ -215,24 +176,31 @@ app.post('/login', async (req, res) => {
 });
 
 app.post('/makeOrder', async (req, res) => {
-    const order = req.body;
+    const order = JSON.parse(req.body.bodyCart);
     if (!req.session.user || !req.session.user._id) {
         return res.status(401).send('Brak autoryzacji');
     }
 
     try {
-        const orderData = {
-            userId: req.session.user._id,
-            items: order
-        };
+        const items = order.map(item => ({
+            restaurationId: item.restaurationId,
+            foodId: item.foodId,
+            sauce: item.sauce,
+            meat: item.meat
+        }));
 
-        const order = new Order(orderData);
-        await order.save();
-        
+        const orderDB = new Order({
+            _id: new ObjectId(),
+            userId: req.session.user._id,
+            items: items
+        });
+        await orderDB.save();
+
     } catch (error) {
         console.error(error);
+        return res.status(500).send('Błąd przy zapisie zamówienia');
     }
-    
+
     res.cookie('cart', null, {maxAge: 1000 * 60 * -3600});
     res.redirect('/');
 });
