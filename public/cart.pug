@@ -1,22 +1,31 @@
-doctype HTML
+doctype html
 html(lang='pl')
     head
         meta(charset='UTF-8')
         title Twój koszyk!
         link(rel="stylesheet",href="./css/style.css")
+        link(rel="stylesheet",href="./css/bootstrap.min.css")
     body
-        h1 Twój Koszyk
-            each item in cart
-              .item
-                .name 
-                  p= item.foodId
-                .restaurant
-                  p= item.restaurationId
-                .sauce
-                  p= item.sauce
-                .meat
-                  p= item.meat
-                .price
-                  p= item.price
-            .total 
-              p= `Total: ${cart.length}`
+        .container
+            .row
+                .col-md-12
+                    #cart
+                        h1.text-center Twój Koszyk
+                        if cart
+                            each item in cart
+                                .item
+                                    .name
+                                        p= item.foodId
+                                    .restaurant
+                                        p= item.restaurationId
+                                    .sauce
+                                        p= item.sauce
+                                    .meat
+                                        p= item.meat
+                                    .price
+                                        p= item.price
+                            form#frm(action="/makeOrder", method="POST")
+                                textarea#bodyCart(form='frm', name='bodyCart')= JSONCart
+                                input#makeOrder(type='submit', value="Złóż zamówienie")
+                        else
+                            h1.text-center Twój koszyk jest pusty!

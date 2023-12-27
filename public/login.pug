@@ -3,7 +3,25 @@ html(lang='pl')
     head
         meta(charset='UTF-8')
         title Logowanie
-        link(rel="stylesheet",href="./css/style.css")
+        link(rel="stylesheet",href="./css/form.css")
         link(href="https://fonts.googleapis.com/css2?family=Marhey&display=swap",rel="stylesheet")
     body
-        
+        div.page-content
+            div.form-v10-content
+                form.form-detail(method='post',action='/login')
+                    div.form-left
+                        h2 Dane do logowania
+                        div.form-row
+                            label(for='email') E-mail
+                            input#email(type='text',name='email')
+
+                        div.form-row
+                            label(for='password') Hasło
+                            input#password(type='password',name='password')
+
+                        div.form-row
+                            input.register(type='submit', value='Zaloguj')
+                        if error == true
+                            span Wprowadziłeś nieprawidłowe dane, spróbuj ponownie lub załóż konto jeżeli go nie posiadasz.
+                        h2 Nie masz konta?
+                            a(href="/signup") Zarejestruj się!

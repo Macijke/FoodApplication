@@ -4,7 +4,7 @@ html {
 
 nav {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     font-size: 1.5rem;
     margin-left: 2%;
     margin-right: 2%;
@@ -18,7 +18,8 @@ nav a {
     text-decoration: none;
 
 }
-a:link{
+
+a:link {
     color: white;
     text-decoration: none;
 }
@@ -71,6 +72,7 @@ a:visited {
     justify-content: center;
     background: rgba(0, 0, 0, 0.5);
 }
+
 .adressText {
     color: #fff;
     text-align: center;
@@ -101,8 +103,9 @@ a:visited {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 1.6em;
-    color:black;
+    color: black;
     display: block;
+
     img {
         float: left;
         width: 1.25em;
@@ -115,8 +118,12 @@ a:visited {
 }
 
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
 }
 
 h1 {
@@ -138,7 +145,7 @@ h1 {
     flex: 1;
     margin: 10px;
     font-family: 'Marhey', 'sans-serif';
-    border: 1px solid rgba(11,29,24,0.2);
+    border: 1px solid rgba(11, 29, 24, 0.2);
 }
 
 .menuContainer:hover {
@@ -222,6 +229,7 @@ input[type="radio"] {
     background-color: #ffffff;
     width: 30px;
     height: 30px;
+
     &:checked + .radio-label {
         border: 1px solid green;
         font-weight: 600;
@@ -231,16 +239,17 @@ input[type="radio"] {
 input[type="radio"]:checked {
     border-radius: 5px;
     position: absolute;
-  &:before {
-      content: "✓";
-      color: #ffffff;
-      font-size: 14px;
-      font-weight: bold;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-  }
+
+    &:before {
+        content: "✓";
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .radio-label {
@@ -255,6 +264,7 @@ input[type="radio"]:checked {
     width: 30vw;
     height: 38px;
     font-size: 20px;
+
     &:hover {
         background-color: #f2f2f2;
     }
@@ -275,6 +285,7 @@ h2 {
     width: 25vw;
     float: right;
     margin: 0;
+
     .productsText {
         font-size: 20px;
         text-align: center;
@@ -283,6 +294,7 @@ h2 {
 
 .winImg {
     text-align: center;
+
     img {
         width: 28vh;
     }
@@ -338,34 +350,41 @@ h2 {
     color: rgba(0, 0, 0, .3);
 }
 
+.container {
+    margin-top: 50px;
+}
+
 .item {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
     padding: 20px;
+    margin-bottom: 20px;
     background-color: #fff;
     border-radius: 5px;
-    margin: 10px 0;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.03);
 
-    p {
-        margin: 0;
-        padding: 0;
-    }
-
-  .name,
-  .restaurant,
-  .sauce,
-  .meat {
-        text-align: center;
-        font-size: 0.9em;
-        color: #666;
+    .name,
+    .restaurant,
+    .sauce,
+    .meat,
+    .price {
+        p {
+            margin-bottom: 0;
+            font-weight: bold;
+            color: #333;
+        }
     }
 }
 
-.total {
-    text-align: center;
-    color: #333;
-    margin-top: 20px;
-    font-size: 1.2em;
-    font-weight: bold;
+#cart {
+    h1 {
+        margin-bottom: 50px;
+        color: #333;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+}
+
+#bodyCart {
+    display: none;
 }
