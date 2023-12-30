@@ -1,1 +1,42 @@
 //TODO: STRONA KONTA, DANE DO ZMIANY, TRACKOWANIE DOSTAW, SPRAWDZANIE POPRZEDNICH ZAMÓWIEŃ ITP ITD.
+doctype html
+html(lang='pl')
+    head
+        meta(charset='UTF-8')
+        title Twój profil, #{user.firstName}!
+        link(rel="stylesheet",href="./css/style.css")
+        link(rel="stylesheet",href="./css/bootstrap.min.css")
+    body
+        nav.navbar.navbar-dark.bg-dark.fixed-top
+            a.navbar-brand.text-white(href="#") Witaj #{user.firstName}
+            ul.navbar-nav.mr-auto.align-self-center
+                li.nav-item
+                    a.nav-link.text-white(href="/history") Historia dostaw
+            ul.navbar-nav.mr-auto.align-self-center.text-right
+                li.nav-item
+                    a.nav-link.text-white(href="/logout") Wyloguj
+        div.containerAcc
+            h2.text-center Twoja historia zamówień
+            div.orders
+                each order, index in orders
+                    div.order
+                        h4 Zamówienie ##{index+1}
+                        - var suma = 0
+                        each item in order.itemsMap
+                            div.position
+                                div Restauracja -&nbsp;
+                                    span= item.restaurationId
+                                div Pozycja -&nbsp;
+                                    span= item.foodId
+                                if item.sauce
+                                    div Sos -&nbsp;
+                                        span= item.sauce
+                                if item.meat
+                                    div Mięso -&nbsp;
+                                        span= item.meat
+                                div Cena -&nbsp;
+                                    span= item.price + " PLN"
+                                    - suma += item.price
+                    div Data złożenia zamówienia: #{order.dataZam}
+                    div Łączny koszt zamówienia: #{suma} PLN
+                    hr

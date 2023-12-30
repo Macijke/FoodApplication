@@ -16,4 +16,8 @@ html(lang='pl')
                 a(href="./account") Konto
                 
         header
-           div Polecamy dzisiaj
+            h1 Polecamy dzisiaj
+            div.promotion
+                  h2 #{recommendations.restaurationId}
+                  h3 #{recommendations.slogan}
+                  a(href=`${recommendations.link}`) Zamów teraz!

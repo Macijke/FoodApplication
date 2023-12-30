@@ -7,7 +7,9 @@ const Menu = require('./src/menu-model.js');
 const Filter = require('./src/filter-model.js');
 const User = require('./src/user-model.js');
 const Order = require('./src/order-model.js');
+const Recommendation = require('./src/recommendation-model.js');
 const {validateRegister, registerFormValidationRules} = require('./src/validation.js');
+const DateFormatted = require('./src/date-format.js');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const ObjectId = mongoose.Types.ObjectId;
@@ -29,9 +31,12 @@ app.use(session({
     cookie: {secure: false}
 }));
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     mongoose.connect("mongodb://127.0.0.1:27017/foodApplication");
-    res.render('index');
+    const recommendations =  await Recommendation.findOne({promotionDay: new Date().getDay()})
+    var parsed = JSON.parse(JSON.stringify(recommendations));
+    console.log(parsed)
+    res.render('index', {recommendations: parsed});
 });
 
 app.get('/filter', async (req, res) => {
@@ -75,7 +80,7 @@ app.get('/signup', (req, res) => {
     res.render('register', {errors: [], values: {}});
 });
 
-app.post('/register', registerFormValidationRules(), validateRegister, (req, res) => {
+app.post('/signup', registerFormValidationRules(), validateRegister, (req, res) => {
     const {firstName, lastName, email, password, adressCity, adressStreet, adressNumber, adressLocal} = req.body;
     const user = new User({
         _id: new ObjectId(),
@@ -132,6 +137,9 @@ app.post('/conf', (req, res) => {
 app.get('/cart', async (req, res) => {
     mongoose.connect("mongodb://127.0.0.1:27017/foodApplication");
     if (req.cookies.cart) {
+        if (req.session.user) {
+
+        }
         let cartData = JSON.parse(req.cookies.cart);
         const itemsDetails = await Promise.all(cartData.map(async itemData => {
             const foodOrder = await Menu.findOne({_id: new ObjectId(itemData.foodId)}).populate('name');
@@ -141,7 +149,8 @@ app.get('/cart', async (req, res) => {
                 restaurationId: restro.name,
                 sauce: itemData.sauce,
                 meat: itemData.meat,
-                price: foodOrder.price
+                price: foodOrder.price,
+                images: foodOrder.images
             };
         }));
         res.render('cart', {cart: itemsDetails, JSONCart: req.cookies.cart});
@@ -151,8 +160,40 @@ app.get('/cart', async (req, res) => {
 });
 
 
-app.get('/account', (req, res) => {
-    req.session.user ? res.render('account') : res.render('login', {errors: [], values: {}});
+app.get('/account', async (req, res) => {
+    if (!req.session.user) {
+        return res.render('login', {errors: [], values: {}, orders: null});
+    }
+
+    try {
+        let orders = await Order.find({userId: req.session.user._id});
+        let parsed = JSON.parse(JSON.stringify(orders));
+
+        const ordersMap = await Promise.all(parsed.map(async order => {
+            const itemsMap = await Promise.all(order.items.map(async item => {
+                const foodOrder = await Menu.findOne({_id: new ObjectId(item.foodId)}).populate('name');
+                const restro = await Restauration.findOne({_id: new ObjectId(item.restaurationId)}).populate('name');
+
+                return {
+                    foodId: foodOrder.name,
+                    restaurationId: restro.name,
+                    sauce: item.sauce,
+                    meat: item.meat,
+                    price: foodOrder.price,
+                    dataZam: item.date
+                };
+            }));
+
+            return {
+                itemsMap,
+                dataZam: order.date
+            };
+        }));
+
+        res.render('account', {user: req.session.user, orders: ordersMap});
+    } catch (e) {
+        console.log(e);
+    }
 });
 
 app.post('/login', async (req, res) => {
@@ -178,7 +219,7 @@ app.post('/login', async (req, res) => {
 app.post('/makeOrder', async (req, res) => {
     const order = JSON.parse(req.body.bodyCart);
     if (!req.session.user || !req.session.user._id) {
-        return res.status(401).send('Brak autoryzacji');
+        return res.status(401).send('Brak autoryzacji'); //TODO: CHANGE
     }
 
     try {
@@ -186,13 +227,15 @@ app.post('/makeOrder', async (req, res) => {
             restaurationId: item.restaurationId,
             foodId: item.foodId,
             sauce: item.sauce,
-            meat: item.meat
+            meat: item.meat,
+            price: item.price
         }));
 
         const orderDB = new Order({
             _id: new ObjectId(),
             userId: req.session.user._id,
-            items: items
+            items: items,
+            date: DateFormatted
         });
         await orderDB.save();
 
@@ -203,6 +246,20 @@ app.post('/makeOrder', async (req, res) => {
 
     res.cookie('cart', null, {maxAge: 1000 * 60 * -3600});
     res.redirect('/');
+});
+
+app.get('/history', (req, res) => {
+
+});
+
+app.get('/logout', (req, res) => {
+    console.log(req.session);
+    req.session.destroy((err) => {
+        if (err) {
+            console.error('Error destroying session:', err);
+        }
+        res.redirect('/');
+    });
 });
 
 app.listen(3000);

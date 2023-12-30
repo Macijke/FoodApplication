@@ -6,26 +6,31 @@ html(lang='pl')
         link(rel="stylesheet",href="./css/style.css")
         link(rel="stylesheet",href="./css/bootstrap.min.css")
     body
-        .container
-            .row
-                .col-md-12
-                    #cart
-                        h1.text-center Twój Koszyk
+        div.container
+            div.row.align-items-start
+                div.col
+                    div#cart
                         if cart
+                            h2.text-center Twój Koszyk
+                            - var suma = 0
                             each item in cart
-                                .item
-                                    .name
-                                        p= item.foodId
-                                    .restaurant
-                                        p= item.restaurationId
-                                    .sauce
-                                        p= item.sauce
-                                    .meat
-                                        p= item.meat
-                                    .price
-                                        p= item.price
-                            form#frm(action="/makeOrder", method="POST")
-                                textarea#bodyCart(form='frm', name='bodyCart')= JSONCart
-                                input#makeOrder(type='submit', value="Złóż zamówienie")
+                                - suma+=item.price
+                                div.item
+                                    img.imgCart(src='./images/menu/' + item.images)
+                                    span.restaurant Restauracja: #{item.restaurationId}
+                                    span.name Danie: #{item.foodId}
+                                    if item.sauce
+                                        span.sauce Sos: #{item.sauce}
+                                    if item.meat
+                                        span.meat Mięso: #{item.meat}
+                                    span.price Cena: #{item.price}
+                            div.summary
+                                form#frm(action="/makeOrder", method="POST")
+                                    div.price Łączna cena zamówienia: #{suma} PLN
+                                    textarea#bodyCart(form='frm', name='bodyCart')= JSONCart
+                                    input#makeOrder.cartBtn(type='submit', value="Złóż zamówienie")
                         else
                             h1.text-center Twój koszyk jest pusty!
+                div.col
+                    div
+                        h2.text-center Dane do dostawy

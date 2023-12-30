@@ -6,6 +6,8 @@ const orderSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     },
+    date: String,
+    fullPrice: Number,
     items: [
         {
             restaurationId: {
@@ -17,7 +19,8 @@ const orderSchema = new mongoose.Schema({
                 required: true
             },
             sauce: String,
-            meat: String
+            meat: String,
+            price: Number
         }
     ]
 });

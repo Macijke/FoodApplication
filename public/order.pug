@@ -10,23 +10,22 @@ html(lang='pl')
         if dish != null
             div#windowGrid
                 div.windowContent
+                    span.closeX
+                        a(href='javascript:history.back()') X
                     div.leftWindowContent
-                        form(action="#", method="post") 
                             div.addons
                                 if dish.sauces != ""
                                     h2 Wybierz sos
                                     each sauce in dish.sauces
                                         label.custom-radio
-                                            input(type='radio', name='sauceRadio', value=sauce)
+                                            input(type='radio', name='sauceRadio', value=sauce, form="orderForm")
                                             span.radio-label= sauce
                                 if dish.meat != ""
                                     h2 Wybierz mięso
                                     each meat in dish.meat
                                         label.custom-radio
-                                            input(type='radio', name='meatRadio', value=meat)
+                                            input(type='radio', name='meatRadio', value=meat, form="orderForm")
                                             span.radio-label= meat
-                            div.btnContent
-                                button.cartBtn Dodaj do koszyka
                     div.rightWindowContent
                         h1= dish.name
                         div.winImg
@@ -37,6 +36,9 @@ html(lang='pl')
                                     =prodct
                                 else
                                     =prodct + ", "
+                        form#orderForm(action="#", method="post")
+                            div.btnContent
+                                button.cartBtn Dodaj do koszyka
         div.menuGrid
             each val in menu
                 a(href="/conf?r="+ restauration._id + "&f=" + val._id)
