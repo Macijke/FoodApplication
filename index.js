@@ -35,7 +35,6 @@ app.get('/', async (req, res) => {
     mongoose.connect("mongodb://127.0.0.1:27017/foodApplication");
     const recommendations =  await Recommendation.findOne({promotionDay: new Date().getDay()})
     var parsed = JSON.parse(JSON.stringify(recommendations));
-    console.log(parsed)
     res.render('index', {recommendations: parsed});
 });
 
@@ -137,8 +136,10 @@ app.post('/conf', (req, res) => {
 app.get('/cart', async (req, res) => {
     mongoose.connect("mongodb://127.0.0.1:27017/foodApplication");
     if (req.cookies.cart) {
+        let userSession = null;
         if (req.session.user) {
-
+            console.log(req.session.user)
+            userSession = req.session.user;
         }
         let cartData = JSON.parse(req.cookies.cart);
         const itemsDetails = await Promise.all(cartData.map(async itemData => {
@@ -153,9 +154,9 @@ app.get('/cart', async (req, res) => {
                 images: foodOrder.images
             };
         }));
-        res.render('cart', {cart: itemsDetails, JSONCart: req.cookies.cart});
+        res.render('cart', {cart: itemsDetails, JSONCart: req.cookies.cart, user: userSession});
     } else {
-        res.render('cart', {cart: null, JSONCart: null});
+        res.render('cart', {cart: null, JSONCart: null, user: userSession});
     }
 });
 

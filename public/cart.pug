@@ -23,7 +23,7 @@ html(lang='pl')
                                         span.sauce Sos: #{item.sauce}
                                     if item.meat
                                         span.meat Mięso: #{item.meat}
-                                    span.price Cena: #{item.price}
+                                    span.price Cena: #{item.price} PLN
                             div.summary
                                 form#frm(action="/makeOrder", method="POST")
                                     div.price Łączna cena zamówienia: #{suma} PLN
@@ -34,3 +34,13 @@ html(lang='pl')
                 div.col
                     div
                         h2.text-center Dane do dostawy
+                        if user
+                            div.item
+                                span.name Miejscowość: #{user.adressCity}
+                                span.name Ulica: #{user.adressStreet}
+                                span.name Numer budynku: #{user.adressNumber}
+                                if user.adressLocal
+                                    span.name Numer mieszkania: #{user.adressLocal}
+                        else
+                            div.item
+                                Zaloguj się aby złożyć zamówienie!
