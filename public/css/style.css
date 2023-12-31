@@ -6,9 +6,8 @@ html {
 nav {
   display: flex;
   justify-content: space-between;
-  font-size: 1.5rem;
-  margin-left: 2%;
-  margin-right: 2%;
+  padding-left: 50px !important;
+  padding-right: 50px !important;
 }
 
 .divNav a:link {
@@ -90,7 +89,6 @@ a:visited {
   width: 15%;
   position: fixed;
   z-index: 1;
-  top: 20px;
   left: 10px;
   background: #eee;
   overflow-x: hidden;
@@ -222,7 +220,7 @@ h1 {
 
 input[type=radio] {
   position: absolute;
-  margin-left: 28.5vw;
+  margin-left: 27vw;
   background-color: #ffffff;
   width: 30px;
   height: 30px;
@@ -257,7 +255,7 @@ input[type=radio]:checked:before {
   user-select: none;
   transition: background-color 0.3s, color 0.3s;
   width: 30vw;
-  height: 38px;
+  height: 46px;
   font-size: 20px;
 }
 .radio-label:hover {
@@ -270,13 +268,13 @@ h2 {
 
 .leftWindowContent {
   overflow-y: scroll;
-  height: 75vh;
-  width: 35vw;
+  height: 70vh;
+  width: 33vw;
   float: left;
 }
 
 .rightWindowContent {
-  width: 25vw;
+  width: 23vw;
   float: right;
   margin: 0;
 }
@@ -343,7 +341,8 @@ h2 {
 }
 
 .container {
-  margin-top: 50px;
+  margin-top: 80px;
+  max-width: 1920px !important;
 }
 
 .item {
@@ -446,6 +445,10 @@ h2 {
 }
 .summary input {
   margin: 5%;
+}
+
+header {
+  margin-top: 80px;
 }
 
 /*# sourceMappingURL=style.css.map */

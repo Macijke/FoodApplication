@@ -6,6 +6,11 @@ html(lang='pl')
         link(rel="stylesheet",href="./css/style.css")
         link(rel="stylesheet",href="./css/bootstrap.min.css")
     body
+        nav.navbar.navbar-dark.bg-dark.fixed-top
+            a.navbar-brand.text-white(href="./") Główna
+            a.navbar-brand.text-white(href="./restaurations") Restauracje
+            a.navbar-brand.text-white(href="./cart") Koszyk
+            a.navbar-brand.text-white(href="./account") Konto
         div.container
             div.row.align-items-start
                 div.col
@@ -13,7 +18,7 @@ html(lang='pl')
                         if cart
                             h2.text-center Twój Koszyk
                             - var suma = 0
-                            each item in cart
+                            each item, index in cart
                                 - suma+=item.price
                                 div.item
                                     img.imgCart(src='./images/menu/' + item.images)
@@ -24,11 +29,17 @@ html(lang='pl')
                                     if item.meat
                                         span.meat Mięso: #{item.meat}
                                     span.price Cena: #{item.price} PLN
+                                    a.text-primary(href=`/cart/remove/${index}`) Usuń pozycję
                             div.summary
                                 form#frm(action="/makeOrder", method="POST")
                                     div.price Łączna cena zamówienia: #{suma} PLN
                                     textarea#bodyCart(form='frm', name='bodyCart')= JSONCart
-                                    input#makeOrder.cartBtn(type='submit', value="Złóż zamówienie")
+                                    if user
+                                        input#makeOrder.cartBtn(type='submit', value="Złóż zamówienie")
+                                    else
+                                        div.price
+                                            a.text-primary(href='/account') Zaloguj się,&nbsp;
+                                            span aby złożyć zamówienie
                         else
                             h1.text-center Twój koszyk jest pusty!
                 div.col
@@ -42,5 +53,4 @@ html(lang='pl')
                                 if user.adressLocal
                                     span.name Numer mieszkania: #{user.adressLocal}
                         else
-                            div.item
-                                Zaloguj się aby złożyć zamówienie!
+                            h5.text-center Zaloguj się aby złożyć zamówienie!

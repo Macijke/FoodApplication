@@ -4,8 +4,14 @@ html(lang='pl')
         meta(charset='UTF-8')
         title Logowanie
         link(rel="stylesheet",href="./css/form.css")
+        link(rel="stylesheet",href="./css/bootstrap.min.css")
         link(href="https://fonts.googleapis.com/css2?family=Marhey&display=swap",rel="stylesheet")
     body
+        nav.navbar.navbar-dark.bg-dark.fixed-top
+            a.navbar-brand.text-white(href="./") Główna
+            a.navbar-brand.text-white(href="./restaurations") Restauracje
+            a.navbar-brand.text-white(href="./cart") Koszyk
+            a.navbar-brand.text-white(href="./account") Konto
         div.page-content
             div.form-v10-content
                 form.form-detail(method='post',action='/login')
@@ -20,8 +26,8 @@ html(lang='pl')
                             input#password(type='password',name='password')
 
                         div.form-row
-                            input.register(type='submit', value='Zaloguj')
+                            button.btn.btn-primary(type='submit') Zaloguj się
                         if error == true
                             span Wprowadziłeś nieprawidłowe dane, spróbuj ponownie lub załóż konto jeżeli go nie posiadasz.
-                        h2 Nie masz konta?
-                            a(href="/signup") Zarejestruj się!
+                        h2 Nie masz konta?&nbsp;
+                            a.ahref(href="/signup") Zarejestruj się!

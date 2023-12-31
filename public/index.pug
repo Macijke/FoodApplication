@@ -4,17 +4,14 @@ html(lang='pl')
         meta(charset='UTF-8')
         title Zamów jedzenie prosto do domu!
         link(rel="stylesheet",href="./css/style.css")
+        link(rel="stylesheet",href="./css/bootstrap.min.css")
+
     body
-        nav 
-            div.divNav
-                a(href="./restaurations") Restauracje
-            div.divNav
-                a(href="./about") O nas
-            div.divNav
-                a(href="./contact") Kontakt
-            div.divNav
-                a(href="./account") Konto
-                
+        nav.navbar.navbar-dark.bg-dark.fixed-top
+            a.navbar-brand.text-white(href="./") Główna
+            a.navbar-brand.text-white(href="./restaurations") Restauracje
+            a.navbar-brand.text-white(href="./cart") Koszyk
+            a.navbar-brand.text-white(href="./account") Konto
         header
             h1 Polecamy dzisiaj
             div.promotion

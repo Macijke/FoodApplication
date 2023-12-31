@@ -30,6 +30,10 @@ body {
                 font-size: 25px;
                 margin-bottom: 34px;
                 padding: 33px 50px 0px 60px;
+                a {
+                    text-decoration: none;
+                    color: #0c06bd;
+                }
             }
 
             .form-left {
@@ -87,6 +91,7 @@ body {
                 appearance: none;
                 outline: none;
                 font-size: 16px;
+                color: #FFF;
             }
 
             .select-btn {
@@ -117,7 +122,10 @@ body {
                     border-bottom-left-radius: 10px;
                 }
 
-                .form-left { padding-bottom: 50px; }
+                .form-left {
+                    padding-bottom: 50px;
+                    color: #000 !important;
+                }
             }
 
             @media screen and (max-width: 575px) {
@@ -148,4 +156,14 @@ body {
 
 span {
     color: orangered;
+}
+
+.form-left {
+    input[type='text'] {
+        color: #000 !important;
+    }
+
+input[type='password'] {
+        color: #000 !important;
+    }
 }

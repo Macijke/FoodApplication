@@ -29,6 +29,10 @@ body {
   margin-bottom: 34px;
   padding: 33px 50px 0px 60px;
 }
+.page-content .form-v10-content .form-detail h2 a {
+  text-decoration: none;
+  color: #0c06bd;
+}
 .page-content .form-v10-content .form-detail .form-left {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -83,6 +87,7 @@ body {
   appearance: none;
   outline: none;
   font-size: 16px;
+  color: #FFF;
 }
 .page-content .form-v10-content .form-detail .select-btn {
   position: absolute;
@@ -112,6 +117,7 @@ body {
   }
   .page-content .form-v10-content .form-detail .form-left {
     padding-bottom: 50px;
+    color: #000 !important;
   }
 }
 @media screen and (max-width: 575px) {
@@ -140,6 +146,13 @@ body {
 
 span {
   color: orangered;
+}
+
+.form-left input[type=text] {
+  color: #000 !important;
+}
+.form-left input[type=password] {
+  color: #000 !important;
 }
 
 /*# sourceMappingURL=form.css.map */

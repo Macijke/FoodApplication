@@ -4,53 +4,55 @@ html(lang='pl')
         meta(charset='UTF-8')
         title= "Zamów z " + restauration.name + " online!"
         link(rel="stylesheet",href="./css/style.css")
+        link(rel="stylesheet",href="./css/bootstrap.min.css")
         link(href="https://fonts.googleapis.com/css2?family=Marhey&display=swap",rel="stylesheet")
     body
-        h1= restauration.name
-        if dish != null
-            div#windowGrid
-                div.windowContent
-                    span.closeX
-                        a(href='javascript:history.back()') X
-                    div.leftWindowContent
-                            div.addons
-                                if dish.sauces != ""
-                                    h2 Wybierz sos
-                                    each sauce in dish.sauces
-                                        label.custom-radio
-                                            input(type='radio', name='sauceRadio', value=sauce, form="orderForm")
-                                            span.radio-label= sauce
-                                if dish.meat != ""
-                                    h2 Wybierz mięso
-                                    each meat in dish.meat
-                                        label.custom-radio
-                                            input(type='radio', name='meatRadio', value=meat, form="orderForm")
-                                            span.radio-label= meat
-                    div.rightWindowContent
-                        h1= dish.name
-                        div.winImg
-                            img(src='./images/menu/' + dish.images)
-                        div.productsText
-                            each prodct, index in dish.products
-                                if index === dish.products.length -1
-                                    =prodct
-                                else
-                                    =prodct + ", "
-                        form#orderForm(action="#", method="post")
-                            div.btnContent
-                                button.cartBtn Dodaj do koszyka
-        div.menuGrid
-            each val in menu
-                a(href="/conf?r="+ restauration._id + "&f=" + val._id)
-                    div.menuContainer
-                        img(src="./images/menu/" + val.images)
-                        div.menuNameText
-                            =val.name
-                        div.productsText
-                            each product, index in val.products
-                                if index === val.products.length -1
-                                    =product
-                                else
-                                    =product + ", "
-                        div.priceText
-                            = val.price + " PLN"
+        div.container
+            h1= restauration.name
+            if dish != null
+                div#windowGrid
+                    div.windowContent
+                        span.closeX
+                            a(href='javascript:history.back()') X
+                        div.leftWindowContent
+                                div.addons
+                                    if dish.sauces != ""
+                                        h2 Wybierz sos
+                                        each sauce in dish.sauces
+                                            label.custom-radio
+                                                input(type='radio', name='sauceRadio', value=sauce, form="orderForm")
+                                                span.radio-label= sauce
+                                    if dish.meat != ""
+                                        h2 Wybierz mięso
+                                        each meat in dish.meat
+                                            label.custom-radio
+                                                input(type='radio', name='meatRadio', value=meat, form="orderForm")
+                                                span.radio-label= meat
+                        div.rightWindowContent
+                            h1= dish.name
+                            div.winImg
+                                img(src='./images/menu/' + dish.images)
+                            div.productsText
+                                each prodct, index in dish.products
+                                    if index === dish.products.length -1
+                                        =prodct
+                                    else
+                                        =prodct + ", "
+                            form#orderForm(action="#", method="post")
+                                div.btnContent
+                                    button.cartBtn Dodaj do koszyka
+            div.menuGrid
+                each val in menu
+                    a(href="/conf?r="+ restauration._id + "&f=" + val._id)
+                        div.menuContainer
+                            img(src="./images/menu/" + val.images)
+                            div.menuNameText
+                                =val.name
+                            div.productsText
+                                each product, index in val.products
+                                    if index === val.products.length -1
+                                        =product
+                                    else
+                                        =product + ", "
+                            div.priceText
+                                = val.price + " PLN"

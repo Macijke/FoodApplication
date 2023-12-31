@@ -1,0 +1,44 @@
+doctype HTML
+html(lang='pl')
+    head
+        meta(charset='UTF-8')
+        title Edytuj dane do dostawy!
+        link(rel="stylesheet",href="./css/form.css")
+        link(rel="stylesheet",href="./css/bootstrap.min.css")
+        link(href="https://fonts.googleapis.com/css2?family=Marhey&display=swap",rel="stylesheet")
+    body
+        nav.navbar.navbar-dark.bg-dark.fixed-top
+            a.navbar-brand.text-white(href="./") Główna
+            a.navbar-brand.text-white(href="./restaurations") Restauracje
+            a.navbar-brand.text-white(href="./cart") Koszyk
+            a.navbar-brand.text-white(href="./account") Konto
+        div.page-content
+            div.form-v10-content
+                form.form-detail#editForm(method='post',action='#')
+                    div.form-right
+                        h2 Dane do dostaw jedzenia
+                        div.form-row
+                            label(for='adressCity') Miejscowość
+                            input#adressCity(type='text',name='adressCity', value=values.adressCity ? values.adressCity : '')
+                            span= errors.adressCity ? errors.adressCity : ''
+
+                        div.form-row
+                            label(for='adressStreet') Ulica
+                            input#adressStreet(type='text',name='adressStreet', value=values.adressStreet ? values.adressStreet : '')
+                            span= errors.adressStreet ? errors.adressStreet : ''
+
+                        div.form-row
+                            label(for='adressNumber') Numer budynku
+                            input#adressNumber(type='text',name='adressNumber', value=values.adressNumber ? values.adressNumber : '')
+                            span= errors.adressNumber ? errors.adressNumber : ''
+
+                        div.form-row
+                            label(for='adressLocal') Numer mieszkania (opcjonalny)
+                            input#adressLocal(type='text',name='adressLocal')
+
+                        div.form-row
+                            input.register(type='submit', value='Edytuj dane')
+                            
+                        div.form-row
+                            if success == true
+                                span.text-success.text-strong Pomyślnie zmieniono adres dostaw!

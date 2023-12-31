@@ -12,6 +12,7 @@ const {validateRegister, registerFormValidationRules} = require('./src/validatio
 const DateFormatted = require('./src/date-format.js');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const {validateEdit} = require("./src/validation");
 const ObjectId = mongoose.Types.ObjectId;
 const app = express();
 
@@ -33,7 +34,7 @@ app.use(session({
 
 app.get('/', async (req, res) => {
     mongoose.connect("mongodb://127.0.0.1:27017/foodApplication");
-    const recommendations =  await Recommendation.findOne({promotionDay: new Date().getDay()})
+    const recommendations = await Recommendation.findOne({promotionDay: new Date().getDay()})
     var parsed = JSON.parse(JSON.stringify(recommendations));
     res.render('index', {recommendations: parsed});
 });
@@ -133,12 +134,12 @@ app.post('/conf', (req, res) => {
     res.redirect('/cart')
 });
 
+
 app.get('/cart', async (req, res) => {
     mongoose.connect("mongodb://127.0.0.1:27017/foodApplication");
     if (req.cookies.cart) {
         let userSession = null;
         if (req.session.user) {
-            console.log(req.session.user)
             userSession = req.session.user;
         }
         let cartData = JSON.parse(req.cookies.cart);
@@ -160,6 +161,17 @@ app.get('/cart', async (req, res) => {
     }
 });
 
+app.get('/cart/remove/:index', async (req, res) => {
+    const indexToRemove = parseInt(req.params.index);
+    if (req.cookies.cart) {
+        let cartData = JSON.parse(req.cookies.cart);
+        if (indexToRemove >= 0 && indexToRemove < cartData.length) {
+            cartData.splice(indexToRemove, 1);
+            res.cookie('cart', JSON.stringify(cartData), {maxAge: 86400000}); // Ustaw odpowiedni czas życia ciasteczka
+        }
+    }
+    res.redirect('/cart');
+})
 
 app.get('/account', async (req, res) => {
     if (!req.session.user) {
@@ -249,18 +261,55 @@ app.post('/makeOrder', async (req, res) => {
     res.redirect('/');
 });
 
-app.get('/history', (req, res) => {
-
-});
-
 app.get('/logout', (req, res) => {
-    console.log(req.session);
     req.session.destroy((err) => {
         if (err) {
             console.error('Error destroying session:', err);
         }
         res.redirect('/');
     });
+});
+
+app.get('/edit', (req, res) => {
+    if (req.session.user) {
+        res.render('edit', {user: req.session.user, errors: [], values: req.session.user, success: null});
+    } else {
+        res.redirect('/account');
+    }
+});
+
+app.post('/edit', registerFormValidationRules(), validateEdit, async (req, res) => {
+    const userId = req.session.user._id;
+    console.log(req.body.address)
+    const updatedAddress = {
+        adressCity: req.body.adressCity,
+        adressStreet: req.body.adressStreet,
+        adressNumber: req.body.adressNumber,
+        adressLocal: req.body.adressLocal
+    };
+
+    try {
+        let user = await User.findById(new ObjectId(userId));
+        if (!user) {
+            return res.render('edit', {user: req.session.user, errors: [], values: req.session.user, success: false});
+        }
+
+        user.adressCity = updatedAddress.adressCity;
+        user.adressStreet = updatedAddress.adressStreet;
+        user.adressNumber = updatedAddress.adressNumber;
+        user.adressLocal = updatedAddress.adressLocal;
+
+        await user.save();
+
+        req.session.user.adressCity = user.adressCity;
+        req.session.user.adressStreet = user.adressStreet;
+        req.session.user.adressNumber = user.adressNumber;
+        req.session.user.adressLocal = user.adressLocal;
+
+        return res.render('edit', {user: req.session.user, errors: [], values: req.session.user, success: true});
+    } catch (error) {
+        console.error(error);
+    }
 });
 
 app.listen(3000);

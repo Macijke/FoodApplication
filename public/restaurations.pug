@@ -5,22 +5,29 @@ html(lang='pl')
         title Obsługiwane restauracje przez nas!
         link(rel="stylesheet",href="./css/style.css")
         link(href="https://fonts.googleapis.com/css2?family=Marhey&display=swap",rel="stylesheet")
+        link(rel="stylesheet",href="./css/bootstrap.min.css")
     body
-        h1 Restauracje z dostawą
-        div.sidenav
-            h2 Filtry
-            each filter in filters
-                a(href='/filter?foodType=' + filter.name)
-                    img.filterIcons(src="./images/icons/" + filter.icon)
-                    = filter.visibleName
-        div.foodGrid
-            each val in restaurations
-                a(href="/order?r=" + val._id)
-                    div.foodContainer
-                        img(src="./images/" + val.image, class='imgFormat')
-                        div.overlay
-                            div.centeredText
-                                =val.name
-                            div.adressText
-                                = val.adress.city + ", ul. " + val.adress.street
-            
+        nav.navbar.navbar-dark.bg-dark.fixed-top
+            a.navbar-brand.text-white(href="./") Główna
+            a.navbar-brand.text-white(href="./restaurations") Restauracje
+            a.navbar-brand.text-white(href="./cart") Koszyk
+            a.navbar-brand.text-white(href="./account") Konto
+        div.container
+            h1 Restauracje z dostawą
+            div.sidenav
+                h2 Filtry
+                each filter in filters
+                    a(href='/filter?foodType=' + filter.name)
+                        img.filterIcons(src="./images/icons/" + filter.icon)
+                        = filter.visibleName
+                a(href='/restaurations') Wyczyść
+            div.foodGrid
+                each val in restaurations
+                    a(href="/order?r=" + val._id)
+                        div.foodContainer
+                            img(src="./images/" + val.image, class='imgFormat')
+                            div.overlay
+                                div.centeredText
+                                    =val.name
+                                div.adressText
+                                    = val.adress.city + ", ul. " + val.adress.street

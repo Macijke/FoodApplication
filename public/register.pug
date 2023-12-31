@@ -4,8 +4,14 @@ html(lang='pl')
         meta(charset='UTF-8')
         title Rejestracja
         link(rel="stylesheet",href="./css/form.css")
+        link(rel="stylesheet",href="./css/bootstrap.min.css")
         link(href="https://fonts.googleapis.com/css2?family=Marhey&display=swap",rel="stylesheet")
     body
+        nav.navbar.navbar-dark.bg-dark.fixed-top
+            a.navbar-brand.text-white(href="./") Główna
+            a.navbar-brand.text-white(href="./restaurations") Restauracje
+            a.navbar-brand.text-white(href="./cart") Koszyk
+            a.navbar-brand.text-white(href="./account") Konto
         div.page-content
             div.form-v10-content
                 form.form-detail(method='post',action='#')
