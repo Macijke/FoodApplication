@@ -137,11 +137,11 @@ app.post('/conf', (req, res) => {
 
 app.get('/cart', async (req, res) => {
     mongoose.connect("mongodb://127.0.0.1:27017/foodApplication");
+    let userSession = null;
+    if (req.session.user) {
+        userSession = req.session.user;
+    }
     if (req.cookies.cart) {
-        let userSession = null;
-        if (req.session.user) {
-            userSession = req.session.user;
-        }
         let cartData = JSON.parse(req.cookies.cart);
         const itemsDetails = await Promise.all(cartData.map(async itemData => {
             const foodOrder = await Menu.findOne({_id: new ObjectId(itemData.foodId)}).populate('name');

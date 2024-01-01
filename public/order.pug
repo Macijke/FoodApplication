@@ -7,6 +7,11 @@ html(lang='pl')
         link(rel="stylesheet",href="./css/bootstrap.min.css")
         link(href="https://fonts.googleapis.com/css2?family=Marhey&display=swap",rel="stylesheet")
     body
+        nav.navbar.navbar-dark.bg-dark.fixed
+            a.navbar-brand.text-white(href="./") Główna
+            a.navbar-brand.text-white(href="./restaurations") Restauracje
+            a.navbar-brand.text-white(href="./cart") Koszyk
+            a.navbar-brand.text-white(href="./account") Konto
         div.container
             h1= restauration.name
             if dish != null

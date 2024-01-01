@@ -13,8 +13,9 @@ html(lang='pl')
             a.navbar-brand.text-white(href="./cart") Koszyk
             a.navbar-brand.text-white(href="./account") Konto
         header
-            h1 Polecamy dzisiaj
-            div.promotion
-                  h2 #{recommendations.restaurationId}
-                  h3 #{recommendations.slogan}
-                  a(href=`${recommendations.link}`) Zamów teraz!
+            h2.text-center Polecamy
+            .promotion-box
+                if recommendations
+                  h2.promotion-box__title #{recommendations.restaurationId}
+                  p.promotion-box__slogan #{recommendations.slogan}
+                  a.promotion-box__link(href=recommendations.link) Zamów teraz

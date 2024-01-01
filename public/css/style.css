@@ -451,4 +451,35 @@ header {
   margin-top: 80px;
 }
 
+.promotion-box {
+  background-color: #f7f7f7;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+.promotion-box__title {
+  color: #3498db;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+.promotion-box__slogan {
+  color: #333;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+.promotion-box__link {
+  display: inline-block;
+  background-color: #f39c12;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+}
+.promotion-box__link:hover {
+  background-color: #c87f0a;
+}
+
 /*# sourceMappingURL=style.css.map */

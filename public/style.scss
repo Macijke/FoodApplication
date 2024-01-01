@@ -476,3 +476,44 @@ h2 {
 header {
     margin-top: 80px;
 }
+
+$primary-color: #3498db;
+$secondary-color: #f39c12;
+$background-color: #f7f7f7;
+$dark-text: #333;
+$light-text: #fff;
+
+.promotion-box {
+    background-color: $background-color;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+
+    &__title {
+        color: $primary-color;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+
+    &__slogan {
+        color: $dark-text;
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    &__link {
+        display: inline-block;
+        background-color: $secondary-color;
+        color: $light-text;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+            background-color: darken($secondary-color, 10%);
+        }
+    }
+}
