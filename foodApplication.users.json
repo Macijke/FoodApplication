@@ -1,0 +1,41 @@
+[{
+  "_id": {
+    "$oid": "6586e4bd183cdec09cd5d08d"
+  },
+  "firstName": "Maciej",
+  "lastName": "Hosaniak",
+  "email": "maciekhosaniak@o2.pl",
+  "password": "123123123",
+  "adressCity": "Nowy Targ",
+  "adressStreet": "Krzywa",
+  "adressNumber": "444",
+  "__v": 0,
+  "adressLocal": null
+},
+{
+  "_id": {
+    "$oid": "6586eb70dae179da70aaa4d4"
+  },
+  "firstName": "Test",
+  "lastName": "Test",
+  "email": "test@test.test",
+  "password": "123123123",
+  "adressCity": "Test",
+  "adressStreet": "Test",
+  "adressNumber": "321",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6591e78186430d01de6257d3"
+  },
+  "firstName": "Andrzej",
+  "lastName": "Duda",
+  "email": "prezydent@pl.pl",
+  "password": "DupaAndrzeja123",
+  "adressCity": "Warszawa",
+  "adressStreet": "Wiejska",
+  "adressNumber": "433",
+  "adressLocal": null,
+  "__v": 0
+}]

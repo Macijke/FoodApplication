@@ -21,4 +21,12 @@
   "name": "pizza",
   "visibleName": "Pizza",
   "icon": "pizza.png"
+},
+{
+  "_id": {
+    "$oid": "6591c4ea4fea918df85c1f14"
+  },
+  "name": "obiad",
+  "visibleName": "Obiad",
+  "icon": "dinner.png"
 }]

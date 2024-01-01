@@ -16,21 +16,6 @@
 },
 {
   "_id": {
-    "$oid": "65572d938969759f7a10b884"
-  },
-  "name": "Sonovi Kebab",
-  "type": [
-    "kebab",
-    "fastfood"
-  ],
-  "adress": {
-    "city": "Nowy Targ",
-    "street": "Krzywa 77"
-  },
-  "image": "sonovi.png"
-},
-{
-  "_id": {
     "$oid": "655735cd8969759f7a10b885"
   },
   "name": "Da Grasso",
@@ -56,4 +41,32 @@
     "street": "Szaflasrska 43"
   },
   "image": "mcdonald.png"
+},
+{
+  "_id": {
+    "$oid": "658de8b61a2aaa3e2bb94626"
+  },
+  "name": "KFC",
+  "type": [
+    "fastfood"
+  ],
+  "adress": {
+    "city": "Nowy Targ",
+    "street": "Szaflasrska 22"
+  },
+  "image": "kfc.png"
+},
+{
+  "_id": {
+    "$oid": "658dea941a2aaa3e2bb94630"
+  },
+  "name": "Express FD",
+  "type": [
+    "obiad"
+  ],
+  "adress": {
+    "city": "Nowy Targ",
+    "street": "Szybka 97"
+  },
+  "image": "express.png"
 }]

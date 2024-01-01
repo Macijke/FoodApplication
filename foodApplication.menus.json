@@ -21,6 +21,11 @@
     "sos",
     "warzywa"
   ],
+  "meat": [
+    "wołowo-baranie",
+    "kurczak",
+    "mieszane"
+  ],
   "images": "rolloHossen.png"
 },
 {
@@ -88,7 +93,12 @@
     "frytki",
     "sos do wyboru"
   ],
-  "images": "frytkiHossen.png"
+  "images": "frytkiHossen.png",
+  "sauces": [
+    "ketchup",
+    "czosnkowy",
+    "BBQ"
+  ]
 },
 {
   "_id": {
@@ -188,4 +198,913 @@
     "ananas"
   ],
   "images": "zapiekHawHossen.png"
+},
+{
+  "_id": {
+    "$oid": "6591a0b44fea918df85c1ede"
+  },
+  "restaurant_id": "655735cd8969759f7a10b885",
+  "name": "Capricciosa",
+  "type": [
+    "pizza"
+  ],
+  "price": 45,
+  "sauces": [
+    "ketchup",
+    "czosnkowy",
+    "ostry"
+  ],
+  "products": [
+    "ciasto",
+    "sos pomidorowy",
+    "ser",
+    "szynka",
+    "pieczarki",
+    "karczochy",
+    "oliwki"
+  ],
+  "images": "capricciosaDaGrasso.png"
+},
+{
+  "_id": {
+    "$oid": "6591a0c84fea918df85c1edf"
+  },
+  "restaurant_id": "655735cd8969759f7a10b885",
+  "name": "Vegetariana",
+  "type": [
+    "pizza"
+  ],
+  "price": 42,
+  "sauces": [
+    "ketchup",
+    "czosnkowy",
+    "ostry"
+  ],
+  "products": [
+    "ciasto",
+    "sos pomidorowy",
+    "ser",
+    "papryka",
+    "cebula",
+    "pieczarki",
+    "oliwki",
+    "pomidory"
+  ],
+  "images": "vegetarianaDaGrasso.png"
+},
+{
+  "_id": {
+    "$oid": "6591a0d14fea918df85c1ee0"
+  },
+  "restaurant_id": "655735cd8969759f7a10b885",
+  "name": "Diavolo",
+  "type": [
+    "pizza"
+  ],
+  "price": 48,
+  "sauces": [
+    "ketchup",
+    "czosnkowy",
+    "ostry"
+  ],
+  "products": [
+    "ciasto",
+    "sos pomidorowy",
+    "ser",
+    "salami",
+    "papryczki jalapeno",
+    "cebula",
+    "oliwki"
+  ],
+  "images": "diavoloDaGrasso.png"
+},
+{
+  "_id": {
+    "$oid": "6591a0db4fea918df85c1ee1"
+  },
+  "restaurant_id": "655735cd8969759f7a10b885",
+  "name": "Quattro Formaggi",
+  "type": [
+    "pizza"
+  ],
+  "price": 50,
+  "sauces": [
+    "ketchup",
+    "czosnkowy",
+    "ostry"
+  ],
+  "products": [
+    "ciasto",
+    "sos pomidorowy",
+    "ser",
+    "mozzarella",
+    "gorgonzola",
+    "parmezan",
+    "kremowy ser"
+  ],
+  "images": "quattroFormaggiDaGrasso.png"
+},
+{
+  "_id": {
+    "$oid": "6591a0f34fea918df85c1ee2"
+  },
+  "restaurant_id": "655735cd8969759f7a10b885",
+  "name": "Funghi",
+  "type": [
+    "pizza"
+  ],
+  "price": 44,
+  "sauces": [
+    "ketchup",
+    "czosnkowy",
+    "ostry"
+  ],
+  "products": [
+    "ciasto",
+    "sos pomidorowy",
+    "ser",
+    "pieczarki",
+    "cebula",
+    "śmietana"
+  ],
+  "images": "funghiDaGrasso.png"
+},
+{
+  "_id": {
+    "$oid": "6591a0fb4fea918df85c1ee3"
+  },
+  "restaurant_id": "655735cd8969759f7a10b885",
+  "name": "Hawaii",
+  "type": [
+    "pizza"
+  ],
+  "price": 46,
+  "sauces": [
+    "ketchup",
+    "czosnkowy",
+    "ostry"
+  ],
+  "products": [
+    "ciasto",
+    "sos pomidorowy",
+    "ser",
+    "szynka",
+    "ananas",
+    "kukurydza"
+  ],
+  "images": "hawaiiDaGrasso.png"
+},
+{
+  "_id": {
+    "$oid": "6591a1034fea918df85c1ee4"
+  },
+  "restaurant_id": "655735cd8969759f7a10b885",
+  "name": "Carbonara",
+  "type": [
+    "pizza"
+  ],
+  "price": 49,
+  "sauces": [
+    "ketchup",
+    "czosnkowy",
+    "ostry"
+  ],
+  "products": [
+    "ciasto",
+    "śmietana",
+    "ser",
+    "boczek",
+    "cebula",
+    "jajko"
+  ],
+  "images": "carbonaraDaGrasso.png"
+},
+{
+  "_id": {
+    "$oid": "6591a10b4fea918df85c1ee5"
+  },
+  "restaurant_id": "655735cd8969759f7a10b885",
+  "name": "Margherita",
+  "type": [
+    "pizza"
+  ],
+  "price": 40,
+  "sauces": [
+    "ketchup",
+    "czosnkowy",
+    "ostry"
+  ],
+  "products": [
+    "ciasto",
+    "sos pomidorowy",
+    "ser"
+  ],
+  "images": "margheritaDaGrasso.png"
+},
+{
+  "_id": {
+    "$oid": "6591a6674fea918df85c1eea"
+  },
+  "restaurant_id": "65573c658969759f7a10b886",
+  "name": "McDouble",
+  "type": [
+    "hamburger"
+  ],
+  "price": 19,
+  "sauces": [
+    "musztarda",
+    "czosnkowy",
+    "śmietanowy"
+  ],
+  "products": [
+    "bułka pszenna",
+    "sos",
+    "ogórek kiszony",
+    "ser",
+    "cebula suszona",
+    "ketchup + sos do wyboru",
+    "podwójne mięso wołowe"
+  ],
+  "images": "mcdoubleMC.png"
+},
+{
+  "_id": {
+    "$oid": "6591a6874fea918df85c1eeb"
+  },
+  "restaurant_id": "65573c658969759f7a10b886",
+  "name": "McChicken",
+  "type": [
+    "hamburger"
+  ],
+  "price": 18,
+  "sauces": [
+    "majonez",
+    "czosnkowy",
+    "słodko-kwaskowy"
+  ],
+  "products": [
+    "bułka pszenna",
+    "sos",
+    "sałata lodowa",
+    "plaster kurczaka",
+    "ser"
+  ],
+  "images": "mcchickenMC.png"
+},
+{
+  "_id": {
+    "$oid": "6591a6974fea918df85c1eed"
+  },
+  "restaurant_id": "65573c658969759f7a10b886",
+  "name": "Big Mac",
+  "type": [
+    "hamburger"
+  ],
+  "price": 22,
+  "sauces": [
+    "sos Big Mac",
+    "czosnkowy",
+    "musztardowo-miodowy"
+  ],
+  "products": [
+    "bułka sezamowa",
+    "sos",
+    "sałata lodowa",
+    "plaster mięsa wołowego",
+    "ser",
+    "cebula świeża"
+  ],
+  "images": "bigMacMC.png"
+},
+{
+  "_id": {
+    "$oid": "6591a69e4fea918df85c1eee"
+  },
+  "restaurant_id": "65573c658969759f7a10b886",
+  "name": "Chicken McNuggets",
+  "type": [
+    "nuggets"
+  ],
+  "price": 15,
+  "sauces": [
+    "słodko-kwaskowy",
+    "czosnkowy",
+    "sos barbecue"
+  ],
+  "products": [
+    "kawałki kurczaka",
+    "panierka",
+    "sos"
+  ],
+  "images": "mcNuggetsMC.png"
+},
+{
+  "_id": {
+    "$oid": "6591a6a64fea918df85c1eef"
+  },
+  "restaurant_id": "65573c658969759f7a10b886",
+  "name": "McFlurry Oreo",
+  "type": [
+    "desert"
+  ],
+  "price": 12,
+  "sauces": [
+    "czekoladowy",
+    "waniliowy"
+  ],
+  "products": [
+    "lody waniliowe",
+    "ciasteczka Oreo",
+    "sos czekoladowy"
+  ],
+  "images": "mcFlurryOreoMC.png"
+},
+{
+  "_id": {
+    "$oid": "6591a6b14fea918df85c1ef0"
+  },
+  "restaurant_id": "65573c658969759f7a10b886",
+  "name": "McWrap Caesar z kurczakiem",
+  "type": [
+    "wrap"
+  ],
+  "price": 21,
+  "sauces": [
+    "czosnkowy",
+    "śmietanowy",
+    "musztardowo-miodowy"
+  ],
+  "products": [
+    "tortilla pszenna",
+    "plaster kurczaka",
+    "sałata rzymska",
+    "pomidorki koktajlowe",
+    "ser pleśniowy"
+  ],
+  "images": "mcWrapCaesarMC.png"
+},
+{
+  "_id": {
+    "$oid": "6591a6b94fea918df85c1ef1"
+  },
+  "restaurant_id": "65573c658969759f7a10b886",
+  "name": "McNChicken Deluxe",
+  "type": [
+    "hamburger"
+  ],
+  "price": 24,
+  "sauces": [
+    "czosnkowy",
+    "sos majonezowy ziołowy",
+    "ostry"
+  ],
+  "products": [
+    "bułka pszenna",
+    "sos",
+    "sałata lodowa",
+    "plaster kurczaka",
+    "ser",
+    "pomidorki koktajlowe",
+    "bekon"
+  ],
+  "images": "mcNChickenDeluxeMC.png"
+},
+{
+  "_id": {
+    "$oid": "6591a6c04fea918df85c1ef2"
+  },
+  "restaurant_id": "65573c658969759f7a10b886",
+  "name": "McSalad Grill z kurczakiem",
+  "type": [
+    "sałatka"
+  ],
+  "price": 23,
+  "sauces": [
+    "czosnkowy",
+    "sos balsamiczny",
+    "musztardowo-miodowy"
+  ],
+  "products": [
+    "sałata lodowa",
+    "pierś z kurczaka grillowana",
+    "papryka grillowana",
+    "ser pleśniowy",
+    "pomidorki koktajlowe",
+    "grzanki"
+  ],
+  "images": "mcSaladGrillMC.png"
+},
+{
+  "_id": {
+    "$oid": "6591a6c84fea918df85c1ef3"
+  },
+  "restaurant_id": "65573c658969759f7a10b886",
+  "name": "McVegan",
+  "type": [
+    "burger"
+  ],
+  "price": 20,
+  "sauces": [
+    "czosnkowy",
+    "sos barbecue",
+    "musztardowo-miodowy"
+  ],
+  "products": [
+    "bułka pszenna",
+    "sos",
+    "plaster kotleta roślinnego",
+    "sałata lodowa",
+    "pomidorki koktajlowe",
+    "cebula świeża"
+  ],
+  "images": "mcVeganMC.png"
+},
+{
+  "_id": {
+    "$oid": "6591ab3f4fea918df85c1ef9"
+  },
+  "restaurant_id": "658de8b61a2aaa3e2bb94626",
+  "name": "Grander",
+  "type": [
+    "hamburger"
+  ],
+  "price": 25,
+  "sauces": [
+    "musztarda",
+    "czosnkowy",
+    "śmietanowy"
+  ],
+  "products": [
+    "bułka sezamowa",
+    "kurczak panierowany",
+    "bekon",
+    "ser Cheddar",
+    "czerwona cebula",
+    "zielona sałata",
+    "sos BBQ i łagodny majonezowy + do wyboru (opcjonalne)"
+  ],
+  "images": "granderKFC.png"
+},
+{
+  "_id": {
+    "$oid": "6591ab534fea918df85c1efa"
+  },
+  "restaurant_id": "658de8b61a2aaa3e2bb94626",
+  "name": "Zinger Burger",
+  "type": [
+    "hamburger"
+  ],
+  "price": 22,
+  "sauces": [
+    "czosnkowy",
+    "ostry",
+    "miodowo-musztardowy"
+  ],
+  "products": [
+    "bułka pszenna",
+    "kurczak panierowany (Zinger)",
+    "sałata lodowa",
+    "pomidor",
+    "majonez",
+    "ser topiony"
+  ],
+  "images": "zingerBurgerKFC.png"
+},
+{
+  "_id": {
+    "$oid": "6591ab5c4fea918df85c1efb"
+  },
+  "restaurant_id": "658de8b61a2aaa3e2bb94626",
+  "name": "Twister",
+  "type": [
+    "wrap"
+  ],
+  "price": 24,
+  "sauces": [
+    "czosnkowy",
+    "ostry",
+    "sos jogurtowy"
+  ],
+  "products": [
+    "tortilla pszenna",
+    "kurczak panierowany",
+    "sałata lodowa",
+    "pomidor",
+    "cebula czerwona",
+    "ser topiony",
+    "sos tzatziki"
+  ],
+  "images": "twisterKFC.png"
+},
+{
+  "_id": {
+    "$oid": "6591ab654fea918df85c1efc"
+  },
+  "restaurant_id": "658de8b61a2aaa3e2bb94626",
+  "name": "Hot Wings",
+  "type": [
+    "skrzydełka"
+  ],
+  "price": 18,
+  "sauces": [
+    "ostry",
+    "czosnkowy",
+    "sos barbecue"
+  ],
+  "products": [
+    "kawałki kurczaka",
+    "panierka pikantna"
+  ],
+  "images": "hotWingsKFC.png"
+},
+{
+  "_id": {
+    "$oid": "6591ab6e4fea918df85c1efd"
+  },
+  "restaurant_id": "658de8b61a2aaa3e2bb94626",
+  "name": "KFC Bucket",
+  "type": [
+    "kurczak"
+  ],
+  "price": 50,
+  "sauces": [
+    "ostry",
+    "czosnkowy",
+    "sos barbecue"
+  ],
+  "products": [
+    "kawałki kurczaka",
+    "skrzydełka",
+    "nuggetsy",
+    "frytki"
+  ],
+  "images": "bucketKFC.png"
+},
+{
+  "_id": {
+    "$oid": "6591ab754fea918df85c1efe"
+  },
+  "restaurant_id": "658de8b61a2aaa3e2bb94626",
+  "name": "KFC Salad Bowl",
+  "type": [
+    "sałatka"
+  ],
+  "price": 20,
+  "sauces": [
+    "czosnkowy",
+    "śmietanowy",
+    "musztardowo-miodowy"
+  ],
+  "products": [
+    "sałata lodowa",
+    "pierś z kurczaka grillowana",
+    "pomidorki koktajlowe",
+    "ser pleśniowy",
+    "grzanki",
+    "bekon"
+  ],
+  "images": "saladBowlKFC.png"
+},
+{
+  "_id": {
+    "$oid": "6591ab824fea918df85c1eff"
+  },
+  "restaurant_id": "658de8b61a2aaa3e2bb94626",
+  "name": "KFC Tower Burger",
+  "type": [
+    "hamburger"
+  ],
+  "price": 26,
+  "sauces": [
+    "czosnkowy",
+    "ostry",
+    "sos koperkowy"
+  ],
+  "products": [
+    "bułka pszenna",
+    "kurczak panierowany",
+    "sałata lodowa",
+    "pomidor",
+    "ser topiony",
+    "bekon",
+    "jajko sadzone"
+  ],
+  "images": "towerBurgerKFC.png"
+},
+{
+  "_id": {
+    "$oid": "6591ab8b4fea918df85c1f00"
+  },
+  "restaurant_id": "658de8b61a2aaa3e2bb94626",
+  "name": "KFC Boxmaster",
+  "type": [
+    "wrap"
+  ],
+  "price": 23,
+  "sauces": [
+    "czosnkowy",
+    "ostry",
+    "sos jogurtowy"
+  ],
+  "products": [
+    "tortilla pszenna",
+    "kurczak panierowany",
+    "łosoś grillowany",
+    "sałata lodowa",
+    "pomidor",
+    "ser topiony",
+    "sos tzatziki"
+  ],
+  "images": "boxmasterKFC.png"
+},
+{
+  "_id": {
+    "$oid": "6591ab934fea918df85c1f01"
+  },
+  "restaurant_id": "658de8b61a2aaa3e2bb94626",
+  "name": "KFC Hot & Spicy",
+  "type": [
+    "kurczak"
+  ],
+  "price": 22,
+  "sauces": [
+    "ostry",
+    "czosnkowy",
+    "sos barbecue"
+  ],
+  "products": [
+    "kawałki kurczaka",
+    "panierka pikantna"
+  ],
+  "images": "hotSpicyKFC.png"
+},
+{
+  "_id": {
+    "$oid": "6591ab9d4fea918df85c1f02"
+  },
+  "restaurant_id": "658de8b61a2aaa3e2bb94626",
+  "name": "KFC Streetwise Box",
+  "type": [
+    "kurczak"
+  ],
+  "price": 28,
+  "sauces": [
+    "ostry",
+    "czosnkowy",
+    "sos barbecue"
+  ],
+  "products": [
+    "kawałki kurczaka",
+    "skrzydełka",
+    "nuggetsy",
+    "frytki",
+    "sos barbecue"
+  ],
+  "images": "streetwiseBoxKFC.png"
+},
+{
+  "_id": {
+    "$oid": "6591aba64fea918df85c1f03"
+  },
+  "restaurant_id": "658de8b61a2aaa3e2bb94626",
+  "name": "KFC Caesar Salad",
+  "type": [
+    "sałatka"
+  ],
+  "price": 19,
+  "sauces": [
+    "czosnkowy",
+    "śmietanowy",
+    "musztardowo-miodowy"
+  ],
+  "products": [
+    "sałata lodowa",
+    "pierś z kurczaka grillowana",
+    "grzanki",
+    "pomidorki koktajlowe",
+    "ser pleśniowy",
+    "bekon"
+  ],
+  "images": "caesarSaladKFC.png"
+},
+{
+  "_id": {
+    "$oid": "6591be3c4fea918df85c1f07"
+  },
+  "restaurant_id": "658dea941a2aaa3e2bb94630",
+  "name": "Zupa Pomidorowa",
+  "type": [
+    "zupa"
+  ],
+  "price": 12,
+  "sauces": [
+    "koperkowy",
+    "śmietanowy",
+    "czosnkowy"
+  ],
+  "products": [
+    "pomidor",
+    "cebula",
+    "marchew",
+    "ziemniak",
+    "makaron",
+    "natka pietruszki"
+  ],
+  "images": "zupaPomidorowa.png"
+},
+{
+  "_id": {
+    "$oid": "6591be4c4fea918df85c1f09"
+  },
+  "restaurant_id": "658dea941a2aaa3e2bb94630",
+  "name": "Pierogi Ruskie",
+  "type": [
+    "pierogi"
+  ],
+  "price": 18,
+  "sauces": [
+    "śmietanowy",
+    "cebula zasmażana",
+    "koperkowy"
+  ],
+  "products": [
+    "ciasto pierogowe",
+    "ziemniaki",
+    "twaróg",
+    "cebula",
+    "sól, pieprz"
+  ],
+  "images": "pierogiRuskie.png"
+},
+{
+  "_id": {
+    "$oid": "6591be534fea918df85c1f0a"
+  },
+  "restaurant_id": "658dea941a2aaa3e2bb94630",
+  "name": "Rosół z Makaronem",
+  "type": [
+    "zupa"
+  ],
+  "price": 15,
+  "sauces": [
+    "koperkowy",
+    "czosnkowy",
+    "pieczeniowy"
+  ],
+  "products": [
+    "kurczak",
+    "marchew",
+    "pietruszka",
+    "seler",
+    "makaron",
+    "natka pietruszki"
+  ],
+  "images": "rosolMakaron.png"
+},
+{
+  "_id": {
+    "$oid": "6591be5c4fea918df85c1f0b"
+  },
+  "restaurant_id": "658dea941a2aaa3e2bb94630",
+  "name": "Kopytka z Grzybami",
+  "type": [
+    "obiad"
+  ],
+  "price": 20,
+  "sauces": [
+    "koperkowy",
+    "czosnkowy",
+    "śmietanowy"
+  ],
+  "products": [
+    "ziemniaki",
+    "mąka",
+    "jajka",
+    "pieczarki",
+    "cebula",
+    "śmietana"
+  ],
+  "images": "kopytkaGrzyby.png"
+},
+{
+  "_id": {
+    "$oid": "6591be884fea918df85c1f0c"
+  },
+  "restaurant_id": "658dea941a2aaa3e2bb94630",
+  "name": "Zupa Grochowa z Kiełbasą",
+  "type": [
+    "zupa"
+  ],
+  "price": 14,
+  "sauces": [
+    "czosnkowy",
+    "pieczeniowy",
+    "koperkowy"
+  ],
+  "products": [
+    "groch",
+    "kiełbasa",
+    "ziemniaki",
+    "marchew",
+    "cebula",
+    "czosnek"
+  ],
+  "images": "zupaGrochowa.png"
+},
+{
+  "_id": {
+    "$oid": "6591be8f4fea918df85c1f0d"
+  },
+  "restaurant_id": "658dea941a2aaa3e2bb94630",
+  "name": "Pierogi z Mięsem",
+  "type": [
+    "pierogi"
+  ],
+  "price": 19,
+  "sauces": [
+    "śmietanowy",
+    "cebula zasmażana",
+    "koperkowy"
+  ],
+  "products": [
+    "ciasto pierogowe",
+    "mięso mielone",
+    "cebula",
+    "sól, pieprz"
+  ],
+  "images": "pierogiMieso.png"
+},
+{
+  "_id": {
+    "$oid": "6591be964fea918df85c1f0e"
+  },
+  "restaurant_id": "658dea941a2aaa3e2bb94630",
+  "name": "Kotlet Schabowy z Ziemniakami",
+  "type": [
+    "obiad"
+  ],
+  "price": 24,
+  "sauces": [
+    "musztardowy",
+    "chrzanowy",
+    "czosnkowy"
+  ],
+  "products": [
+    "schab wieprzowy",
+    "ziemniaki",
+    "marchewka gotowana",
+    "fasolka szparagowa",
+    "sos pieczeniowy"
+  ],
+  "images": "kotletSchabowy.png"
+},
+{
+  "_id": {
+    "$oid": "6591bea14fea918df85c1f0f"
+  },
+  "restaurant_id": "658dea941a2aaa3e2bb94630",
+  "name": "Barszcz Czerwony z Uszkami",
+  "type": [
+    "zupa"
+  ],
+  "price": 16,
+  "sauces": [
+    "śmietanowy",
+    "czosnkowy",
+    "koperkowy"
+  ],
+  "products": [
+    "buraki",
+    "marchew",
+    "ziemniaki",
+    "cebula",
+    "czosnek",
+    "makaron pierogi (uszkami)"
+  ],
+  "images": "barszczUszka.png"
+},
+{
+  "_id": {
+    "$oid": "6591bea74fea918df85c1f10"
+  },
+  "restaurant_id": "658dea941a2aaa3e2bb94630",
+  "name": "Gołąbki z Mięsem",
+  "type": [
+    "obiad"
+  ],
+  "price": 22,
+  "sauces": [
+    "pomidorowy",
+    "śmietanowy",
+    "czosnkowy"
+  ],
+  "products": [
+    "kapusta",
+    "mięso mielone",
+    "ryż",
+    "cebula",
+    "przyprawy",
+    "sos pomidorowy"
+  ],
+  "images": "golabkiMieso.png"
 }]

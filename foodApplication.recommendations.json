@@ -1,0 +1,63 @@
+[{
+  "_id": {
+    "$oid": "658de7c41a2aaa3e2bb94624"
+  },
+  "restaurationId": "Hossen Kebab",
+  "slogan": "Głodny w ten poniedziałkowy dzień? Hossen Kebab z pewnością go zaspokoi! Rollo Kebab, Kebab Amerykański, a może frytki?",
+  "link": "/order?r=65526b32f51b32fd5601dff7",
+  "promotionDay": "1"
+},
+{
+  "_id": {
+    "$oid": "658de9a31a2aaa3e2bb94629"
+  },
+  "restaurationId": "KFC",
+  "slogan": "Wtorek, wtorek... a może wtorkowy kubełek z KFC? Wchodź i się nie zastanawiaj! Promocja czeka.",
+  "link": "/order?r=658de8b61a2aaa3e2bb94626",
+  "promotionDay": "2"
+},
+{
+  "_id": {
+    "$oid": "658dea0b1a2aaa3e2bb9462c"
+  },
+  "restaurationId": "Sonovi Kebab",
+  "slogan": "To już połowa tygodnia, a ty wciąż nie zjadłeś w Sonovi? Czas to zmienić. Zamów już teraz.",
+  "link": "/order?r=65572d938969759f7a10b884",
+  "promotionDay": "3"
+},
+{
+  "_id": {
+    "$oid": "658dea0f1a2aaa3e2bb9462d"
+  },
+  "restaurationId": "Sonovi Kebab",
+  "slogan": "To już połowa tygodnia, a ty wciąż nie zjadłeś w Sonovi? Czas to zmienić. Zamów już teraz.",
+  "link": "/order?r=65572d938969759f7a10b884",
+  "promotionDay": "4"
+},
+{
+  "_id": {
+    "$oid": "658dea471a2aaa3e2bb9462e"
+  },
+  "restaurationId": "Kolorowe Pierogi",
+  "slogan": "Piątek, piąteczek - polecamy coś bez mięsnego, mogą to być Kolorowe Pierogi!",
+  "link": "/order?r=658dea941a2aaa3e2bb94630",
+  "promotionDay": "5"
+},
+{
+  "_id": {
+    "$oid": "658deaf61a2aaa3e2bb94634"
+  },
+  "restaurationId": "Da Grasso",
+  "slogan": "Ahhh... weekend i pizza to jest coś! Da Grasso zaprasza na przepyszną pizzę w ten dzień.",
+  "link": "/order?r=655735cd8969759f7a10b885",
+  "promotionDay": "6"
+},
+{
+  "_id": {
+    "$oid": "658debe11a2aaa3e2bb94635"
+  },
+  "restaurationId": "Karczma Esssa",
+  "slogan": "Niedziela i rosół to jest co czego Ci potrzeba, zapraszamy do zamawiania z Karczmy.",
+  "link": "/order?r=655735cd8969759f7a10b885",
+  "promotionDay": "0"
+}]

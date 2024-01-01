@@ -1,0 +1,199 @@
+[{
+  "_id": {
+    "$oid": "658c9a318c4b24af75e00c0e"
+  },
+  "userId": {
+    "$oid": "6586e4bd183cdec09cd5d08d"
+  },
+  "items": [
+    {
+      "restaurationId": "65526b32f51b32fd5601dff7",
+      "foodId": "65576d7f8969759f7a10b896",
+      "sauce": "ostry",
+      "meat": "wołowo-baranie",
+      "_id": {
+        "$oid": "658c9a318c4b24af75e00c0f"
+      }
+    },
+    {
+      "restaurationId": "65526b32f51b32fd5601dff7",
+      "foodId": "65576db08969759f7a10b899",
+      "sauce": "BBQ",
+      "_id": {
+        "$oid": "658c9a318c4b24af75e00c10"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658d3b228f0134dfebbb2508"
+  },
+  "userId": {
+    "$oid": "6586e4bd183cdec09cd5d08d"
+  },
+  "date": "Thu Dec 28 2023 11:08:00 GMT+0100 (czas środkowoeuropejski standardowy)",
+  "items": [
+    {
+      "restaurationId": "65526b32f51b32fd5601dff7",
+      "foodId": "65576dc78969759f7a10b89c",
+      "_id": {
+        "$oid": "658d3b228f0134dfebbb2509"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658db02c1be73f70b6ad0899"
+  },
+  "userId": {
+    "$oid": "6586e4bd183cdec09cd5d08d"
+  },
+  "date": {
+    "$date": "2023-12-28T18:27:00.000Z"
+  },
+  "items": [
+    {
+      "restaurationId": "65526b32f51b32fd5601dff7",
+      "foodId": "65576d7f8969759f7a10b896",
+      "sauce": "mieszany",
+      "meat": "kurczak",
+      "_id": {
+        "$oid": "658db02c1be73f70b6ad089a"
+      }
+    },
+    {
+      "restaurationId": "65526b32f51b32fd5601dff7",
+      "foodId": "65576d7f8969759f7a10b896",
+      "sauce": "ostry",
+      "meat": "mieszane",
+      "_id": {
+        "$oid": "658db02c1be73f70b6ad089b"
+      }
+    },
+    {
+      "restaurationId": "65526b32f51b32fd5601dff7",
+      "foodId": "65576d7f8969759f7a10b896",
+      "sauce": "mieszany",
+      "meat": "wołowo-baranie",
+      "_id": {
+        "$oid": "658db02c1be73f70b6ad089c"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658db8f86a96f246e7f4c580"
+  },
+  "userId": {
+    "$oid": "6586e4bd183cdec09cd5d08d"
+  },
+  "date": "1703790240000",
+  "items": [
+    {
+      "restaurationId": "65526b32f51b32fd5601dff7",
+      "foodId": "65576d7f8969759f7a10b896",
+      "sauce": "łagodny",
+      "meat": "wołowo-baranie",
+      "_id": {
+        "$oid": "658db8f86a96f246e7f4c581"
+      }
+    },
+    {
+      "restaurationId": "65526b32f51b32fd5601dff7",
+      "foodId": "65576d7f8969759f7a10b896",
+      "sauce": "mieszany",
+      "meat": "wołowo-baranie",
+      "_id": {
+        "$oid": "658db8f86a96f246e7f4c582"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658dbb6023dca3023c697551"
+  },
+  "userId": {
+    "$oid": "6586e4bd183cdec09cd5d08d"
+  },
+  "date": "2023-12-28 20:15",
+  "items": [
+    {
+      "restaurationId": "65526b32f51b32fd5601dff7",
+      "foodId": "65576db08969759f7a10b899",
+      "sauce": "ketchup",
+      "_id": {
+        "$oid": "658dbb6023dca3023c697552"
+      }
+    },
+    {
+      "restaurationId": "65526b32f51b32fd5601dff7",
+      "foodId": "65576d928969759f7a10b897",
+      "sauce": "ketchup",
+      "_id": {
+        "$oid": "658dbb6023dca3023c697553"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6591edc7f369510e24dd0c3f"
+  },
+  "userId": {
+    "$oid": "6586e4bd183cdec09cd5d08d"
+  },
+  "date": "31-12-2023 24:39",
+  "items": [
+    {
+      "restaurationId": "65526b32f51b32fd5601dff7",
+      "foodId": "65576db78969759f7a10b89a",
+      "sauce": "śmietanowy",
+      "_id": {
+        "$oid": "6591edc7f369510e24dd0c40"
+      }
+    },
+    {
+      "restaurationId": "65526b32f51b32fd5601dff7",
+      "foodId": "65576d7f8969759f7a10b896",
+      "sauce": "łagodny",
+      "meat": "kurczak",
+      "_id": {
+        "$oid": "6591edc7f369510e24dd0c41"
+      }
+    },
+    {
+      "restaurationId": "655735cd8969759f7a10b885",
+      "foodId": "6591a0b44fea918df85c1ede",
+      "_id": {
+        "$oid": "6591edc7f369510e24dd0c42"
+      }
+    },
+    {
+      "restaurationId": "658de8b61a2aaa3e2bb94626",
+      "foodId": "6591ab5c4fea918df85c1efb",
+      "sauce": "ostry",
+      "_id": {
+        "$oid": "6591edc7f369510e24dd0c43"
+      }
+    },
+    {
+      "restaurationId": "65526b32f51b32fd5601dff7",
+      "foodId": "65576d7f8969759f7a10b896",
+      "sauce": "łagodny",
+      "meat": "wołowo-baranie",
+      "_id": {
+        "$oid": "6591edc7f369510e24dd0c44"
+      }
+    }
+  ],
+  "__v": 0
+}]
